@@ -169,6 +169,20 @@ img{max-width:100%;display:block}
 .about-val p{font-size:0.78rem;color:var(--text2);line-height:1.5}
 @media(max-width:768px){.about-grid{grid-template-columns:1fr}}
 
+/* ── Mission & Vision ── */
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:52px}
+.mv-card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px 32px;overflow:hidden}
+.mv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.mv-card.vision::before{background:linear-gradient(90deg,var(--primary),#818cf8)}
+.mv-card.mission::before{background:linear-gradient(90deg,var(--accent),#f59e0b)}
+.mv-icon{font-size:2rem;margin-bottom:14px}
+.mv-label{font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px}
+.mv-card.vision .mv-label{color:var(--primary)}
+.mv-card.mission .mv-label{color:var(--accent)}
+.mv-title{font-size:1.3rem;font-weight:800;line-height:1.35;margin-bottom:12px}
+.mv-text{font-size:0.9rem;color:var(--text2);line-height:1.65}
+@media(max-width:768px){.mv-grid{grid-template-columns:1fr}}
+
 /* ── Product ── */
 #product{background:linear-gradient(180deg,var(--dark) 0%,var(--dark2) 100%)}
 .product-header{text-align:center;margin-bottom:60px}
@@ -398,6 +412,22 @@ img{max-width:100%;display:block}
           <h4>Hands-on Support</h4>
           <p>Direct access to the developer. Fast responses, real solutions — not a support ticket queue.</p>
         </div>
+      </div>
+    </div>
+
+    <!-- Mission & Vision -->
+    <div class="mv-grid">
+      <div class="mv-card vision">
+        <div class="mv-icon">🔭</div>
+        <div class="mv-label">Our Vision</div>
+        <h3 class="mv-title">To empower every Filipino service business with simple, affordable technology</h3>
+        <p class="mv-text">So owners can focus on growing their business and serving their customers — not drowning in paperwork, spreadsheets, and manual processes.</p>
+      </div>
+      <div class="mv-card mission">
+        <div class="mv-icon">🚀</div>
+        <div class="mv-label">Our Mission</div>
+        <h3 class="mv-title">We build easy-to-use management systems that automate daily operations</h3>
+        <p class="mv-text">Starting with the wellness industry and expanding to every service business in the Philippines where owners are still doing everything by hand.</p>
       </div>
     </div>
   </div>
