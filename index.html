@@ -1057,26 +1057,101 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   const btn = document.getElementById('musicBtn');
   const tip = document.getElementById('musicTooltip');
   let playing = false;
-  audio.volume = 0.3;
+  let userPaused = false;
+  const TARGET_VOL = 0.3;
+  const FADE_STEP = 0.01;
+  const FADE_MS = 30; // ~900ms for full fade
 
-  // Show tooltip briefly on load
-  setTimeout(() => { tip.classList.add('show'); }, 2000);
-  setTimeout(() => { tip.classList.remove('show'); }, 6000);
+  audio.volume = 0;
 
-  btn.addEventListener('click', () => {
-    if (playing) {
+  function fadeIn(cb) {
+    const iv = setInterval(() => {
+      if (audio.volume < TARGET_VOL - FADE_STEP) {
+        audio.volume = Math.min(audio.volume + FADE_STEP, TARGET_VOL);
+      } else {
+        audio.volume = TARGET_VOL;
+        clearInterval(iv);
+        if (cb) cb();
+      }
+    }, FADE_MS);
+  }
+
+  function fadeOut(cb) {
+    const iv = setInterval(() => {
+      if (audio.volume > FADE_STEP) {
+        audio.volume = Math.max(audio.volume - FADE_STEP, 0);
+      } else {
+        audio.volume = 0;
+        clearInterval(iv);
+        if (cb) cb();
+      }
+    }, FADE_MS);
+  }
+
+  function startPlaying() {
+    audio.volume = 0;
+    audio.play().then(() => {
+      playing = true;
+      btn.classList.add('playing');
+      fadeIn();
+    }).catch(() => {});
+  }
+
+  function stopPlaying() {
+    fadeOut(() => {
       audio.pause();
+      playing = false;
       btn.classList.remove('playing');
+    });
+  }
+
+  // Autoplay: try immediately, fallback to first user interaction
+  startPlaying();
+  const autoplayFallback = () => {
+    if (!playing && !userPaused) {
+      startPlaying();
+      tip.textContent = '♪ Now playing';
+      tip.classList.add('show');
+      setTimeout(() => tip.classList.remove('show'), 2000);
+    }
+    document.removeEventListener('click', autoplayFallback);
+    document.removeEventListener('touchstart', autoplayFallback);
+    document.removeEventListener('scroll', autoplayFallback);
+  };
+  document.addEventListener('click', autoplayFallback, { once: true });
+  document.addEventListener('touchstart', autoplayFallback, { once: true });
+  document.addEventListener('scroll', autoplayFallback, { once: true });
+
+  // Fade out on tab/window blur, fade in on focus
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      if (playing) fadeOut(() => { audio.pause(); });
+    } else {
+      if (playing && !userPaused) {
+        audio.play().then(() => fadeIn()).catch(() => {});
+      }
+    }
+  });
+
+  // Toggle button
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation(); // don't trigger autoplay fallback
+    if (playing) {
+      userPaused = true;
+      stopPlaying();
       tip.textContent = 'Music paused';
     } else {
-      audio.play().catch(() => {});
-      btn.classList.add('playing');
-      tip.textContent = 'Now playing';
+      userPaused = false;
+      startPlaying();
+      tip.textContent = '♪ Now playing';
     }
-    playing = !playing;
     tip.classList.add('show');
     setTimeout(() => tip.classList.remove('show'), 2000);
   });
+
+  // Show tooltip briefly on load
+  setTimeout(() => { tip.textContent = '♪ Background music'; tip.classList.add('show'); }, 2000);
+  setTimeout(() => { tip.classList.remove('show'); }, 5000);
 })();
 </script>
 </body>
