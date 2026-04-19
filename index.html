@@ -109,6 +109,37 @@ tailwind.config = {
   /* Mobile menu */
   .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
   .mobile-menu.open { transform: translateX(0); }
+  /* Music player */
+  .music-btn {
+    position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+    width: 52px; height: 52px; border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border: 2px solid rgba(255,255,255,0.15);
+    color: #fff; font-size: 22px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(99,102,241,0.4);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+  }
+  .music-btn:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(99,102,241,0.6); }
+  .music-btn.playing { animation: pulse-ring 2s ease infinite; }
+  .music-btn .eq-bars { display: flex; align-items: flex-end; gap: 2px; height: 18px; }
+  .music-btn .eq-bars span { width: 3px; background: #fff; border-radius: 1px; animation: eq-bar 0.8s ease-in-out infinite alternate; }
+  .music-btn .eq-bars span:nth-child(1) { height: 6px; animation-delay: 0s; }
+  .music-btn .eq-bars span:nth-child(2) { height: 14px; animation-delay: 0.15s; }
+  .music-btn .eq-bars span:nth-child(3) { height: 9px; animation-delay: 0.3s; }
+  .music-btn .eq-bars span:nth-child(4) { height: 16px; animation-delay: 0.45s; }
+  .music-btn:not(.playing) .eq-bars span { animation: none; height: 3px; opacity: 0.5; }
+  @keyframes eq-bar { to { height: 18px; } }
+  @keyframes pulse-ring { 0%,100% { box-shadow: 0 4px 20px rgba(99,102,241,0.4); } 50% { box-shadow: 0 4px 30px rgba(139,92,246,0.6), 0 0 0 8px rgba(99,102,241,0.08); } }
+  .music-tooltip {
+    position: fixed; bottom: 84px; right: 24px; z-index: 9998;
+    background: rgba(15,23,42,0.9); color: #e2e8f0; font-size: 0.75rem;
+    padding: 8px 14px; border-radius: 8px; border: 1px solid rgba(99,102,241,0.3);
+    backdrop-filter: blur(8px); pointer-events: none;
+    opacity: 0; transform: translateY(8px); transition: all 0.4s ease;
+  }
+  .music-tooltip.show { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased overflow-x-hidden">
@@ -1011,6 +1042,41 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     requestAnimationFrame(draw);
   }
   draw();
+})();
+</script>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop preload="auto" src="sounds/bg-music.mp3"></audio>
+<div id="musicTooltip" class="music-tooltip">Click to play music</div>
+<button id="musicBtn" class="music-btn" aria-label="Toggle background music" title="Toggle music">
+  <div class="eq-bars"><span></span><span></span><span></span><span></span></div>
+</button>
+<script>
+(function(){
+  const audio = document.getElementById('bgMusic');
+  const btn = document.getElementById('musicBtn');
+  const tip = document.getElementById('musicTooltip');
+  let playing = false;
+  audio.volume = 0.3;
+
+  // Show tooltip briefly on load
+  setTimeout(() => { tip.classList.add('show'); }, 2000);
+  setTimeout(() => { tip.classList.remove('show'); }, 6000);
+
+  btn.addEventListener('click', () => {
+    if (playing) {
+      audio.pause();
+      btn.classList.remove('playing');
+      tip.textContent = 'Music paused';
+    } else {
+      audio.play().catch(() => {});
+      btn.classList.add('playing');
+      tip.textContent = 'Now playing';
+    }
+    playing = !playing;
+    tip.classList.add('show');
+    setTimeout(() => tip.classList.remove('show'), 2000);
+  });
 })();
 </script>
 </body>
