@@ -1,983 +1,854 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="google-site-verification" content="DQhP24SOrYr5Eug9c6CX8TSPn8HrDmZIDLASEAyzMCA">
-<title>Lonetech Software &amp; Development Services — Spa &amp; Business Management System Philippines</title>
-<meta name="description" content="Lonetech — Affordable spa management system for Philippine businesses. Automate bookings, payroll, timeclock & analytics. Free demo available. Angeles City, Pampanga.">
-<meta name="keywords" content="spa management system, salon software Philippines, payroll system, booking system, Angeles City, Pampanga, business automation, wellness software, Philippine business software">
-<meta name="author" content="Lonetech Software & Development Services">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://lonetech.lonetechsds.workers.dev/">
-
-<!-- Open Graph (Facebook/social sharing) -->
-<meta property="og:title" content="Lonetech — Spa & Business Management System">
-<meta property="og:description" content="Automate bookings, payroll, timeclock & analytics for your spa or salon. Built for Philippine businesses. Free demo available.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://lonetech.lonetechsds.workers.dev/">
-<meta property="og:locale" content="en_PH">
-
-<!-- Structured Data for Google -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Lonetech Spa Management System",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web Browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "PHP",
-    "description": "Free demo available"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "Lonetech Software & Development Services",
-    "email": "lonetechsds@gmail.com",
-    "telephone": "+63-956-037-0531",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Angeles City",
-      "addressRegion": "Pampanga",
-      "addressCountry": "PH"
+<title>Lonetech Software &amp; Development Services</title>
+<meta name="description" content="Lonetech Software — Business management solutions built for the Philippine wellness and service industry. Automate payroll, reservations, and operations.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%236366f1'/><text x='16' y='23' text-anchor='middle' fill='white' font-size='20' font-weight='900' font-family='system-ui'>L</text></svg>">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        brand: { DEFAULT:'#6366f1', dark:'#4f46e5', light:'#818cf8', subtle:'rgba(99,102,241,0.08)' },
+        accent: { DEFAULT:'#f59e0b', dark:'#d97706', light:'#fbbf24' },
+        success: { DEFAULT:'#10b981', dark:'#059669', light:'#34d399' },
+      },
+      fontFamily: {
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+      },
     }
-  },
-  "description": "All-in-one spa and business management system for Philippine wellness businesses. Reservations, payroll, GPS timeclock, and revenue analytics."
+  }
 }
 </script>
-<style>
-/* ── Reset & Base ── */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --primary:#6366f1;--primary-dark:#4f46e5;--primary-light:rgba(99,102,241,0.1);
-  --accent:#f59e0b;--accent-light:rgba(245,158,11,0.12);
-  --success:#10b981;--success-light:rgba(16,185,129,0.1);
-  --dark:#0f172a;--dark2:#1e293b;--dark3:#334155;
-  --text:#f8fafc;--text2:#94a3b8;--text3:#64748b;
-  --card:rgba(30,41,59,0.7);--border:rgba(148,163,184,0.12);
-  --radius:12px;--radius-lg:20px;
-}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;background:var(--dark);color:var(--text);line-height:1.6;overflow-x:hidden}
-a{color:var(--primary);text-decoration:none}
-img{max-width:100%;display:block}
-
-/* ── Utilities ── */
-.container{max-width:1140px;margin:0 auto;padding:0 24px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:10px;font-weight:700;font-size:0.95rem;border:none;cursor:pointer;transition:all 0.2s}
-.btn-primary{background:var(--primary);color:white}
-.btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 8px 30px rgba(99,102,241,0.35)}
-.btn-outline{background:transparent;color:var(--text);border:2px solid var(--border)}
-.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
-.btn-accent{background:var(--accent);color:var(--dark)}
-.btn-accent:hover{background:#d97706;transform:translateY(-1px)}
-.badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase}
-.section{padding:100px 0}
-.section-label{color:var(--primary);font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px}
-.section-title{font-size:2.4rem;font-weight:800;line-height:1.2;margin-bottom:16px}
-.section-sub{color:var(--text2);font-size:1.05rem;max-width:600px;line-height:1.7}
-.text-center{text-align:center}
-.mx-auto{margin-left:auto;margin-right:auto}
-.grid{display:grid;gap:24px}
-.grid-2{grid-template-columns:repeat(2,1fr)}
-.grid-3{grid-template-columns:repeat(3,1fr)}
-.grid-4{grid-template-columns:repeat(4,1fr)}
-@media(max-width:768px){
-  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
-  .section{padding:60px 0}
-  .section-title{font-size:1.8rem}
-  .hero-content{text-align:center}
-  .hero-buttons{justify-content:center}
-}
-
-/* ── Nav ── */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;transition:all 0.3s;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
-.nav.scrolled{background:rgba(15,23,42,0.92);border-bottom:1px solid var(--border)}
-.nav .container{display:flex;align-items:center;justify-content:space-between}
-.nav-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;color:var(--text)}
-.nav-brand .logo{width:36px;height:36px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;color:white}
-.nav-links{display:flex;gap:32px;list-style:none}
-.nav-links a{color:var(--text2);font-size:0.88rem;font-weight:500;transition:color 0.2s}
-.nav-links a:hover{color:var(--text)}
-.nav-cta .btn{padding:10px 24px;font-size:0.85rem}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:201;padding:8px;background:none;border:none}
-.hamburger span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:all 0.3s}
-/* Mobile drawer */
-.nav-drawer-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:300;opacity:0;transition:opacity 0.3s}
-.nav-drawer-backdrop.open{display:block;opacity:1}
-.nav-drawer{position:fixed;top:0;right:-280px;width:280px;height:100%;background:#0f172a;z-index:301;transition:right 0.35s cubic-bezier(0.4,0,0.2,1);padding:80px 32px 40px;display:flex;flex-direction:column;gap:8px;box-shadow:-4px 0 30px rgba(0,0,0,0.4);border-left:1px solid var(--border);overflow-y:auto}
-.nav-drawer.open{right:0}
-.nav-drawer-close{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--text2);font-size:1.6rem;cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:8px;transition:all 0.2s}
-.nav-drawer-close:hover{background:var(--card);color:var(--text)}
-.nav-drawer a{color:var(--text2);font-size:1rem;font-weight:600;padding:14px 16px;border-radius:10px;transition:all 0.2s;text-decoration:none;display:block}
-.nav-drawer a:hover,.nav-drawer a:active{background:var(--primary-light);color:var(--primary)}
-.nav-drawer .drawer-divider{height:1px;background:var(--border);margin:8px 0}
-.nav-drawer .drawer-cta{margin-top:auto;padding-top:16px}
-.nav-drawer .drawer-cta .btn{width:100%;justify-content:center}
-@media(max-width:768px){
-  .nav-links{display:none!important}
-  .hamburger{display:flex}
-  .nav-cta{display:none}
-}
-
-/* ── Hero ── */
-.hero{padding:160px 0 100px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(99,102,241,0.15),transparent 70%);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(245,158,11,0.08),transparent 70%);pointer-events:none}
-.hero .container{display:flex;align-items:center;gap:60px}
-.hero-content{flex:1}
-.hero-visual{flex:1;position:relative}
-@media(max-width:768px){
-  .hero{padding:120px 0 60px}
-  .hero .container{flex-direction:column;gap:32px}
-  .hero h1{font-size:2rem}
-  .hero p{font-size:0.95rem}
-  .hero-visual{width:100%;max-width:400px;margin:0 auto}
-  .hero-stats{gap:20px;justify-content:center}
-  .hero-stat .num{font-size:1.4rem}
-  .float-card{display:none}
-}
-.hero .badge{background:var(--primary-light);color:var(--primary);margin-bottom:20px}
-.hero h1{font-size:3.2rem;font-weight:900;line-height:1.1;margin-bottom:20px;letter-spacing:-0.02em}
-.hero h1 .highlight{background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero p{color:var(--text2);font-size:1.1rem;line-height:1.7;margin-bottom:32px;max-width:520px}
-.hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
-.hero-stats{display:flex;gap:40px;margin-top:48px;padding-top:32px;border-top:1px solid var(--border)}
-.hero-stat .num{font-size:1.8rem;font-weight:800;color:var(--text)}
-.hero-stat .label{font-size:0.78rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.05em}
-
-/* Hero visual - floating cards */
-.hero-mockup{background:var(--dark2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;position:relative;overflow:visible}
-.float-card{position:absolute;background:var(--card);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;box-shadow:0 8px 32px rgba(0,0,0,0.3);animation:float 6s ease-in-out infinite;z-index:2}
-.float-card.c1{top:-20px;right:-30px;animation-delay:0s}
-.float-card.c2{bottom:-15px;left:-20px;animation-delay:2s}
-.float-card .fc-icon{font-size:1.2rem;margin-bottom:6px}
-.float-card .fc-val{font-size:1.1rem;font-weight:800}
-.float-card .fc-lbl{font-size:0.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.05em}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-/* Hero illustration */
-.hero-illust{display:flex;flex-direction:column;align-items:center;gap:18px;padding:20px 0}
-.hero-illust svg{width:100%;max-width:380px;height:auto}
-
-/* ── Slideshow ── */
-.slideshow{max-width:1000px;margin:0 auto;position:relative}
-.slide-container{overflow:hidden;border-radius:var(--radius-lg);border:1px solid var(--border);background:var(--dark2)}
-.slide-track{display:flex;transition:transform 0.5s ease}
-.slide{min-width:100%;display:flex;align-items:stretch}
-.slide-visual{flex:1;display:flex;align-items:center;justify-content:center;padding:48px 40px;background:linear-gradient(135deg,var(--dark2),var(--dark))}
-.slide-visual svg{width:100%;max-width:320px;height:auto}
-.slide-info{flex:1;padding:48px 40px;display:flex;flex-direction:column;justify-content:center}
-.slide-icon{font-size:2.2rem;margin-bottom:12px}
-.slide-title{font-size:1.4rem;font-weight:800;margin-bottom:10px}
-.slide-desc{color:var(--text2);font-size:0.92rem;line-height:1.7;margin-bottom:20px}
-.slide-features{list-style:none;display:flex;flex-direction:column;gap:8px}
-.slide-features li{display:flex;align-items:center;gap:10px;font-size:0.85rem;color:var(--text2)}
-.slide-features li::before{content:'✓';color:var(--success);font-weight:700}
-@media(max-width:768px){
-  .slide{flex-direction:column}
-  .slide-visual{padding:32px 24px}
-  .slide-info{padding:24px}
-  .slide-arrow.prev{left:4px}
-  .slide-arrow.next{right:4px}
-  .slide-arrow{width:32px;height:32px;font-size:0.9rem;top:40%;background:rgba(30,41,59,0.9)}
-  .slide-title{font-size:1.15rem}
-  .slide-desc{font-size:0.85rem}
-}
-/* Dots */
-.slide-dots{display:flex;gap:8px;justify-content:center;margin-top:20px}
-.slide-dot{width:10px;height:10px;border-radius:50%;background:var(--border);cursor:pointer;transition:all 0.2s;border:none}
-.slide-dot.active{background:var(--primary);width:28px;border-radius:5px}
-/* Arrows */
-.slide-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:var(--card);border:1px solid var(--border);color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;z-index:3}
-.slide-arrow:hover{background:var(--primary);border-color:var(--primary);color:white}
-.slide-arrow.prev{left:-20px}
-.slide-arrow.next{right:-20px}
-/* Progress bar */
-.slide-progress{height:3px;background:var(--border);border-radius:2px;margin-top:16px;max-width:1000px;margin-left:auto;margin-right:auto;overflow:hidden}
-.slide-progress-bar{height:100%;background:var(--primary);border-radius:2px;transition:width 0.3s}
-
-/* ── About ── */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.about-text .section-sub{margin-bottom:24px}
-.about-values{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.about-val{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px}
-.about-val .av-icon{font-size:1.4rem;margin-bottom:8px}
-.about-val h4{font-size:0.9rem;font-weight:700;margin-bottom:4px}
-.about-val p{font-size:0.78rem;color:var(--text2);line-height:1.5}
-@media(max-width:768px){.about-grid{grid-template-columns:1fr}}
-
-/* ── Mission & Vision ── */
-.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:52px}
-.mv-card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px 32px;overflow:hidden}
-.mv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
-.mv-card.vision::before{background:linear-gradient(90deg,var(--primary),#818cf8)}
-.mv-card.mission::before{background:linear-gradient(90deg,var(--accent),#f59e0b)}
-.mv-icon{font-size:2rem;margin-bottom:14px}
-.mv-label{font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px}
-.mv-card.vision .mv-label{color:var(--primary)}
-.mv-card.mission .mv-label{color:var(--accent)}
-.mv-title{font-size:1.3rem;font-weight:800;line-height:1.35;margin-bottom:12px}
-.mv-text{font-size:0.9rem;color:var(--text2);line-height:1.65}
-@media(max-width:768px){.mv-grid{grid-template-columns:1fr}}
-
-/* ── Product ── */
-#product{background:linear-gradient(180deg,var(--dark) 0%,var(--dark2) 100%)}
-.product-header{text-align:center;margin-bottom:60px}
-.product-header .section-sub{margin:0 auto}
-.feature-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:all 0.25s}
-.feature-card:hover{border-color:var(--primary);transform:translateY(-4px);box-shadow:0 12px 40px rgba(99,102,241,0.12)}
-.feature-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:16px}
-.feature-card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px}
-.feature-card p{font-size:0.85rem;color:var(--text2);line-height:1.6}
-.fi-purple{background:var(--primary-light)}
-.fi-amber{background:var(--accent-light)}
-.fi-green{background:var(--success-light)}
-.fi-blue{background:rgba(59,130,246,0.1)}
-.fi-rose{background:rgba(244,63,94,0.1)}
-.fi-cyan{background:rgba(6,182,212,0.1)}
-
-/* ── How it works ── */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:48px;position:relative}
-.steps::before{content:'';position:absolute;top:32px;left:60px;right:60px;height:2px;background:linear-gradient(90deg,var(--primary),var(--accent));opacity:0.3}
-.step{text-align:center;position:relative}
-.step-num{width:64px;height:64px;border-radius:50%;background:var(--dark2);border:2px solid var(--primary);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;color:var(--primary);margin:0 auto 16px;position:relative;z-index:1}
-.step h4{font-size:0.95rem;font-weight:700;margin-bottom:6px}
-.step p{font-size:0.8rem;color:var(--text2)}
-@media(max-width:768px){.steps{grid-template-columns:1fr 1fr;gap:24px}.steps::before{display:none}}
-
-/* ── Pricing ── */
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
-.price-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px;position:relative;transition:all 0.25s}
-.price-card.featured{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary),0 16px 48px rgba(99,102,241,0.2)}
-.price-card.featured::after{content:'MOST POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--primary);color:white;padding:4px 16px;border-radius:20px;font-size:0.7rem;font-weight:700;letter-spacing:0.05em}
-.price-name{font-size:0.85rem;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px}
-.price-amount{font-size:2.6rem;font-weight:900;margin-bottom:4px}
-.price-amount span{font-size:1rem;font-weight:500;color:var(--text3)}
-.price-period{font-size:0.8rem;color:var(--text3);margin-bottom:24px}
-.price-features{list-style:none;margin-bottom:28px}
-.price-features li{padding:8px 0;font-size:0.85rem;color:var(--text2);display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(148,163,184,0.06)}
-.price-features li::before{content:'✓';color:var(--success);font-weight:700;font-size:0.8rem}
-.price-card .btn{width:100%;justify-content:center}
-@media(max-width:768px){.pricing-grid{grid-template-columns:1fr}}
-
-/* ── Testimonial / CTA ── */
-.cta-section{background:linear-gradient(135deg,var(--primary-dark),#7c3aed);padding:80px 0;text-align:center;position:relative;overflow:hidden}
-.cta-section::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
-.cta-section h2{font-size:2.4rem;font-weight:900;margin-bottom:16px;position:relative}
-.cta-section p{color:rgba(255,255,255,0.8);font-size:1.05rem;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto;position:relative}
-.cta-section .btn{position:relative}
-@media(max-width:768px){.cta-section h2{font-size:1.6rem}.cta-section{padding:60px 0}}
-
-/* ── Contact ── */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-.contact-info h3{font-size:1.3rem;font-weight:700;margin-bottom:20px}
-.contact-item{display:flex;gap:16px;margin-bottom:20px}
-.contact-item .ci-icon{width:44px;height:44px;border-radius:10px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
-.contact-item .ci-label{font-size:0.75rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.05em}
-.contact-item .ci-value{font-size:0.95rem;font-weight:600}
-.contact-form{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px}
-.contact-form h3{font-size:1.1rem;font-weight:700;margin-bottom:20px}
-.form-group{margin-bottom:16px}
-.form-group label{display:block;font-size:0.8rem;font-weight:600;color:var(--text2);margin-bottom:6px}
-.form-group input,.form-group textarea,.form-group select{width:100%;padding:12px 16px;background:var(--dark2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:0.9rem;font-family:inherit;transition:border-color 0.2s}
-.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--primary)}
-.form-group textarea{resize:vertical;min-height:100px}
-@media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
-
-/* ── Footer ── */
-.footer{background:var(--dark2);border-top:1px solid var(--border);padding:48px 0 24px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
-.footer-brand p{color:var(--text2);font-size:0.85rem;margin-top:12px;max-width:300px;line-height:1.6}
-.footer-col h4{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text3);margin-bottom:16px}
-.footer-col a{display:block;color:var(--text2);font-size:0.88rem;padding:4px 0;transition:color 0.2s}
-.footer-col a:hover{color:var(--text)}
-.footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;color:var(--text3);flex-wrap:wrap;gap:8px}
-@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:24px}.footer-bottom{flex-direction:column;text-align:center}}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+  /* Custom styles that complement Tailwind */
+  .gradient-text {
+    background: linear-gradient(135deg, #6366f1 0%, #818cf8 40%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gradient-text-alt {
+    background: linear-gradient(135deg, #f59e0b, #10b981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glow-brand { box-shadow: 0 0 80px rgba(99,102,241,0.15), 0 0 160px rgba(99,102,241,0.05); }
+  .glow-card { box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+  /* Universe starfield */
+  #starfield { position:fixed; inset:0; z-index:-1; pointer-events:none; }
+  /* Nebula blobs */
+  .nebula { position:fixed; border-radius:50%; filter:blur(120px); pointer-events:none; z-index:-1; opacity:0.5; }
+  .nebula-1 { width:600px; height:600px; top:-10%; left:-10%; background:radial-gradient(circle, rgba(99,102,241,0.08), transparent 70%); animation: drift 30s ease-in-out infinite; }
+  .nebula-2 { width:500px; height:500px; bottom:-5%; right:-5%; background:radial-gradient(circle, rgba(245,158,11,0.05), transparent 70%); animation: drift 25s ease-in-out 5s infinite reverse; }
+  .nebula-3 { width:400px; height:400px; top:40%; left:50%; background:radial-gradient(circle, rgba(16,185,129,0.04), transparent 70%); animation: drift 35s ease-in-out 10s infinite; }
+  @keyframes drift { 0%,100%{transform:translate(0,0)} 33%{transform:translate(30px,-20px)} 66%{transform:translate(-20px,30px)} }
+  /* Icon glow effect for about cards */
+  .icon-glow { position:relative; }
+  .icon-glow::after { content:''; position:absolute; inset:-4px; border-radius:inherit; opacity:0.4; filter:blur(10px); z-index:-1; transition:opacity 0.3s; }
+  .icon-glow:hover::after { opacity:0.7; }
+  .icon-glow-brand::after { background:#6366f1; }
+  .icon-glow-amber::after { background:#f59e0b; }
+  .icon-glow-green::after { background:#10b981; }
+  .icon-glow-purple::after { background:#a855f7; }
+  .hero-gradient::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(99,102,241,0.12), transparent 70%);
+    pointer-events: none;
+  }
+  .hero-gradient::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(245,158,11,0.06), transparent 70%);
+    pointer-events: none;
+  }
+  .feature-card-hover:hover {
+    border-color: #6366f1;
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(99,102,241,0.15);
+  }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+  .float { animation: float 6s ease-in-out infinite; }
+  .float-delay { animation: float 6s ease-in-out 2s infinite; }
+  @keyframes fade-up { from { opacity:0; transform:translateY(30px) } to { opacity:1; transform:translateY(0) } }
+  .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+  .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+  /* Scrolling logo strip */
+  @keyframes scroll-x { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+  .scroll-strip { animation: scroll-x 20s linear infinite; }
+  /* Slide showcase */
+  .showcase-card { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+  .showcase-card:hover { transform: scale(1.02); }
+  /* Nav blur */
+  .nav-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+  /* Pricing glow */
+  .pricing-featured { box-shadow: 0 0 0 1px #6366f1, 0 16px 48px rgba(99,102,241,0.2); }
+  /* CTA section */
+  .cta-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #0f172a; }
+  ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #475569; }
+  /* Mobile menu */
+  .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
+  .mobile-menu.open { transform: translateX(0); }
+</style>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased overflow-x-hidden">
+<!-- Universe background -->
+<canvas id="starfield"></canvas>
+<div class="nebula nebula-1"></div>
+<div class="nebula nebula-2"></div>
+<div class="nebula nebula-3"></div>
 
-<!-- ── NAVIGATION ── -->
-<nav class="nav" id="nav">
-  <div class="container">
-    <a href="#" class="nav-brand">
-      <div class="logo">L</div>
-      Lonetech
+<!-- ═══════════════════════ NAVIGATION ═══════════════════════ -->
+<nav id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Brand -->
+    <a href="#" class="flex items-center gap-3 group">
+      <div class="w-9 h-9 bg-brand rounded-lg flex items-center justify-center text-white font-black text-lg group-hover:scale-110 transition-transform">L</div>
+      <span class="font-extrabold text-lg tracking-tight">Lonetech</span>
     </a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#demo">Demo</a></li>
-      <li><a href="#product">Product</a></li>
-      <li><a href="#how">How It Works</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#contact">Contact</a></li>
+    <!-- Desktop Links -->
+    <ul class="hidden md:flex items-center gap-8">
+      <li><a href="#about" class="text-sm text-slate-400 hover:text-white transition-colors">About</a></li>
+      <li><a href="#demo" class="text-sm text-slate-400 hover:text-white transition-colors">Demo</a></li>
+      <li><a href="#features" class="text-sm text-slate-400 hover:text-white transition-colors">Features</a></li>
+      <li><a href="#how" class="text-sm text-slate-400 hover:text-white transition-colors">How It Works</a></li>
+      <li><a href="#pricing" class="text-sm text-slate-400 hover:text-white transition-colors">Pricing</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" onclick="toggleNav()">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-cta">
-      <a href="#contact" class="btn btn-primary">Get a Free Demo</a>
+    <!-- CTA -->
+    <div class="hidden md:flex items-center gap-3">
+      <a href="#contact" class="px-5 py-2.5 bg-brand hover:bg-brand-dark text-white text-sm font-bold rounded-lg transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand/30">Get a Free Demo</a>
     </div>
+    <!-- Mobile hamburger -->
+    <button id="mobileMenuBtn" class="md:hidden text-slate-400 hover:text-white p-2" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
   </div>
 </nav>
-
-<!-- Mobile Drawer -->
-<div class="nav-drawer-backdrop" id="drawerBackdrop" onclick="toggleNav()"></div>
-<div class="nav-drawer" id="navDrawer">
-  <button class="nav-drawer-close" onclick="toggleNav()">✕</button>
-  <a href="#about" onclick="toggleNav()">About</a>
-  <a href="#demo" onclick="toggleNav()">Modules</a>
-  <a href="#product" onclick="toggleNav()">Product</a>
-  <a href="#how" onclick="toggleNav()">How It Works</a>
-  <a href="#pricing" onclick="toggleNav()">Pricing</a>
-  <a href="#contact" onclick="toggleNav()">Contact</a>
-  <div class="drawer-divider"></div>
-  <div class="drawer-cta">
-    <a href="#contact" class="btn btn-primary" onclick="toggleNav()">Get a Free Demo →</a>
-  </div>
+<!-- Mobile Menu Overlay -->
+<div id="mobileMenu" class="mobile-menu fixed inset-y-0 right-0 w-72 bg-slate-900/95 nav-blur z-50 p-8 flex flex-col gap-6 md:hidden">
+  <button class="self-end text-slate-400 hover:text-white" onclick="document.getElementById('mobileMenu').classList.remove('open')">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+  </button>
+  <a href="#about" class="text-lg font-semibold text-slate-300 hover:text-white" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
+  <a href="#demo" class="text-lg font-semibold text-slate-300 hover:text-white" onclick="document.getElementById('mobileMenu').classList.remove('open')">Demo</a>
+  <a href="#features" class="text-lg font-semibold text-slate-300 hover:text-white" onclick="document.getElementById('mobileMenu').classList.remove('open')">Features</a>
+  <a href="#how" class="text-lg font-semibold text-slate-300 hover:text-white" onclick="document.getElementById('mobileMenu').classList.remove('open')">How It Works</a>
+  <a href="#pricing" class="text-lg font-semibold text-slate-300 hover:text-white" onclick="document.getElementById('mobileMenu').classList.remove('open')">Pricing</a>
+  <a href="#contact" class="mt-4 px-5 py-3 bg-brand text-white text-center font-bold rounded-lg">Get a Free Demo</a>
 </div>
 
-<!-- ── HERO ── -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <span class="badge">🇵🇭 Built for Philippine Businesses</span>
-      <h1>Smart Software for<br><span class="highlight">Smarter Businesses</span></h1>
-      <p>Lonetech Software &amp; Development Services builds management tools that eliminate manual work, prevent costly errors, and give business owners real-time control — from payroll to reservations.</p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary">Request a Free Demo →</a>
-        <a href="#product" class="btn btn-outline">View Our Product</a>
-      </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="num">10s</div>
-          <div class="label">Payroll computed</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">0</div>
-          <div class="label">Double-bookings</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">24/7</div>
-          <div class="label">Access anywhere</div>
-        </div>
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section class="hero-gradient relative pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Top badge -->
+    <div class="flex justify-center mb-8">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand/10 border border-brand/20 text-brand-light text-xs font-bold uppercase tracking-wider">
+        🇵🇭 Built for Philippine Businesses
+      </span>
+    </div>
+    <!-- Headline -->
+    <div class="text-center max-w-4xl mx-auto">
+      <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-[1.05] mb-6">
+        Smart Software for<br>
+        <span class="gradient-text">Smarter Businesses</span>
+      </h1>
+      <p class="text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto mb-10">
+        Lonetech builds management tools that eliminate manual work, prevent costly errors, and give business owners real-time control — from payroll to reservations.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <a href="#contact" class="px-8 py-4 bg-brand hover:bg-brand-dark text-white font-bold rounded-xl transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand/30 text-base">
+          Request a Free Demo →
+        </a>
+        <a href="#demo" class="px-8 py-4 bg-transparent border-2 border-slate-700 hover:border-brand text-slate-300 hover:text-white font-bold rounded-xl transition-all text-base">
+          See It in Action
+        </a>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-mockup">
-        <div class="hero-illust">
-          <svg viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Calendar grid -->
-            <rect x="20" y="40" width="360" height="220" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
-            <rect x="20" y="40" width="360" height="36" rx="12" fill="#6366f1" fill-opacity="0.15"/>
-            <text x="200" y="64" text-anchor="middle" fill="#6366f1" font-size="13" font-weight="700">April 2026</text>
-            <!-- Day headers -->
-            <text x="55" y="96" text-anchor="middle" fill="#64748b" font-size="9" font-weight="600">SUN</text>
-            <text x="108" y="96" text-anchor="middle" fill="#64748b" font-size="9" font-weight="600">MON</text>
-            <text x="161" y="96" text-anchor="middle" fill="#64748b" font-size="9" font-weight="600">TUE</text>
-            <text x="214" y="96" text-anchor="middle" fill="#64748b" font-size="9" font-weight="600">WED</text>
-            <text x="267" y="96" text-anchor="middle" fill="#64748b" font-size="9" font-weight="600">THU</text>
-            <text x="320" y="96" text-anchor="middle" fill="#64748b" font-size="9" font-weight="600">FRI</text>
-            <text x="360" y="96" text-anchor="middle" fill="#64748b" font-size="9" font-weight="600">SAT</text>
-            <!-- Booking chips -->
-            <rect x="95" y="114" width="30" height="6" rx="3" fill="#10b981" opacity="0.7"/>
-            <rect x="95" y="124" width="22" height="6" rx="3" fill="#f59e0b" opacity="0.7"/>
-            <rect x="200" y="114" width="30" height="6" rx="3" fill="#6366f1" opacity="0.7"/>
-            <rect x="200" y="124" width="18" height="6" rx="3" fill="#10b981" opacity="0.7"/>
-            <rect x="252" y="114" width="34" height="6" rx="3" fill="#f59e0b" opacity="0.7"/>
-            <rect x="305" y="114" width="30" height="6" rx="3" fill="#10b981" opacity="0.7"/>
-            <rect x="148" y="152" width="30" height="6" rx="3" fill="#6366f1" opacity="0.7"/>
-            <rect x="148" y="162" width="20" height="6" rx="3" fill="#10b981" opacity="0.7"/>
-            <rect x="252" y="152" width="30" height="6" rx="3" fill="#10b981" opacity="0.7"/>
-            <rect x="305" y="152" width="28" height="6" rx="3" fill="#f59e0b" opacity="0.7"/>
-            <!-- Today highlight -->
-            <circle cx="214" cy="150" r="14" fill="#6366f1" fill-opacity="0.2" stroke="#6366f1" stroke-width="1.5"/>
-            <text x="214" y="154" text-anchor="middle" fill="#6366f1" font-size="11" font-weight="700">8</text>
-            <!-- Stats bar at top -->
-            <rect x="30" y="8" width="52" height="22" rx="6" fill="#1e293b" stroke="#334155"/>
-            <text x="56" y="23" text-anchor="middle" fill="#10b981" font-size="8" font-weight="700">12 Done</text>
-            <rect x="90" y="8" width="60" height="22" rx="6" fill="#1e293b" stroke="#334155"/>
-            <text x="120" y="23" text-anchor="middle" fill="#f59e0b" font-size="8" font-weight="700">₱18,500</text>
-            <rect x="158" y="8" width="70" height="22" rx="6" fill="#1e293b" stroke="#334155"/>
-            <text x="193" y="23" text-anchor="middle" fill="#6366f1" font-size="8" font-weight="700">5 Confirmed</text>
-          </svg>
+
+    <!-- Hero visual: floating dashboard mockup -->
+    <div class="relative max-w-4xl mx-auto">
+      <div class="relative bg-slate-900/80 border border-slate-800 rounded-2xl p-6 glow-brand">
+        <!-- Mock dashboard -->
+        <div class="bg-slate-900 rounded-xl border border-slate-800 overflow-hidden">
+          <!-- Top bar -->
+          <div class="flex items-center gap-2 px-4 py-3 border-b border-slate-800">
+            <div class="w-3 h-3 rounded-full bg-red-500/60"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-500/60"></div>
+            <div class="w-3 h-3 rounded-full bg-green-500/60"></div>
+            <div class="ml-4 flex-1 bg-slate-800 rounded-md h-6 max-w-xs flex items-center px-3">
+              <span class="text-[10px] text-slate-500">spa-manager.lonetech.app</span>
+            </div>
+          </div>
+          <!-- Stats row -->
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-3 p-4">
+            <div class="bg-slate-800/60 rounded-lg p-3 text-center">
+              <div class="text-2xl font-black text-white">16</div>
+              <div class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Bookings</div>
+            </div>
+            <div class="bg-slate-800/60 rounded-lg p-3 text-center">
+              <div class="text-2xl font-black text-success">₱6.8K</div>
+              <div class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Revenue</div>
+            </div>
+            <div class="bg-slate-800/60 rounded-lg p-3 text-center hidden md:block">
+              <div class="text-2xl font-black text-brand-light">4</div>
+              <div class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Therapists</div>
+            </div>
+            <div class="bg-slate-800/60 rounded-lg p-3 text-center hidden md:block">
+              <div class="text-2xl font-black text-accent">20h</div>
+              <div class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Svc Hours</div>
+            </div>
+            <div class="bg-slate-800/60 rounded-lg p-3 text-center hidden md:block">
+              <div class="text-2xl font-black text-white">0</div>
+              <div class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Conflicts</div>
+            </div>
+          </div>
+          <!-- Schedule grid -->
+          <div class="px-4 pb-4">
+            <div class="grid grid-cols-4 gap-2">
+              <div class="space-y-2">
+                <div class="text-[10px] font-bold text-center text-brand-light uppercase">Alysa</div>
+                <div class="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-2">
+                  <div class="text-[10px] font-bold text-white">john michael</div>
+                  <div class="text-[9px] text-slate-400">Hilot · 1h · ₱460</div>
+                  <div class="text-[9px] text-emerald-400">✅ Done</div>
+                </div>
+                <div class="bg-amber-500/10 border border-amber-500/20 rounded-lg p-2">
+                  <div class="text-[10px] font-bold text-white">apple ferolina</div>
+                  <div class="text-[9px] text-slate-400">Hilot · 1.5h · ₱550</div>
+                  <div class="text-[9px] text-amber-400">⏳ Pending</div>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <div class="text-[10px] font-bold text-center text-brand-light uppercase">Jane</div>
+                <div class="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-2">
+                  <div class="text-[10px] font-bold text-white">john michael</div>
+                  <div class="text-[9px] text-slate-400">Hilot · 1h · ₱460</div>
+                  <div class="text-[9px] text-emerald-400">✅ Done</div>
+                </div>
+                <div class="bg-amber-500/10 border border-amber-500/20 rounded-lg p-2">
+                  <div class="text-[10px] font-bold text-white">Samantha Enero</div>
+                  <div class="text-[9px] text-slate-400">Hilot · 1h · ₱400</div>
+                  <div class="text-[9px] text-amber-400">⏳ Pending</div>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <div class="text-[10px] font-bold text-center text-brand-light uppercase">Weng</div>
+                <div class="bg-blue-500/10 border border-blue-500/20 rounded-lg p-2">
+                  <div class="text-[10px] font-bold text-white">Elaiza Amoy</div>
+                  <div class="text-[9px] text-slate-400">Hilot · 1h · ₱460</div>
+                  <div class="text-[9px] text-blue-400">💫 Ongoing</div>
+                </div>
+                <div class="bg-amber-500/10 border border-amber-500/20 rounded-lg p-2">
+                  <div class="text-[10px] font-bold text-white">Larry</div>
+                  <div class="text-[9px] text-slate-400">Hilot · 1.5h · ₱625</div>
+                  <div class="text-[9px] text-amber-400">⏳ Pending</div>
+                </div>
+              </div>
+              <div class="space-y-2 hidden md:block">
+                <div class="text-[10px] font-bold text-center text-brand-light uppercase">Dholsz</div>
+                <div class="bg-slate-800/60 border border-slate-700 rounded-lg p-2 text-center">
+                  <div class="text-[9px] text-slate-500">Available</div>
+                </div>
+                <div class="bg-amber-500/10 border border-amber-500/20 rounded-lg p-2">
+                  <div class="text-[10px] font-bold text-white">apple ferolina</div>
+                  <div class="text-[9px] text-slate-400">Hilot · 1.5h · ₱550</div>
+                  <div class="text-[9px] text-amber-400">⏳ Pending</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="float-card c1">
-          <div class="fc-icon">💰</div>
-          <div class="fc-val" style="color:var(--success)">₱24,850</div>
-          <div class="fc-lbl">Today's Revenue</div>
+      </div>
+      <!-- Floating cards -->
+      <div class="absolute -top-6 -right-4 md:-right-8 bg-slate-800/90 nav-blur border border-slate-700 rounded-xl p-4 glow-card float z-10">
+        <div class="mb-1"><svg class="w-5 h-5 text-success" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <div class="text-xl font-black text-success">₱6,815</div>
+        <div class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Today's Revenue</div>
+      </div>
+      <div class="absolute -bottom-4 -left-4 md:-left-8 bg-slate-800/90 nav-blur border border-slate-700 rounded-xl p-4 glow-card float-delay z-10">
+        <div class="mb-1"><svg class="w-5 h-5 text-brand-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></div>
+        <div class="text-xl font-black text-white">16 Bookings</div>
+        <div class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Active Today</div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="max-w-3xl mx-auto mt-20 grid grid-cols-3 gap-8 border-t border-slate-800 pt-10">
+      <div class="text-center">
+        <div class="text-3xl md:text-4xl font-black text-white">10s</div>
+        <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold mt-1">Payroll Computed</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl md:text-4xl font-black text-white">0</div>
+        <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold mt-1">Double-Bookings</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl md:text-4xl font-black text-white">24/7</div>
+        <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold mt-1">Access Anywhere</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+<section id="about" class="py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="animate-on-scroll">
+        <div class="text-brand text-xs font-bold uppercase tracking-widest mb-4">About Us</div>
+        <h2 class="text-3xl md:text-5xl font-black tracking-tight leading-tight mb-6">
+          We Build Software<br>
+          <span class="gradient-text">That Works for You</span>
+        </h2>
+        <p class="text-slate-400 text-base leading-relaxed mb-4">
+          Lonetech Software &amp; Development Services is a Philippines-based technology company founded by Gaucho Agregado. We specialize in building practical, industry-specific management solutions that automate the tedious parts of running a business — so owners can focus on growing their brand.
+        </p>
+        <p class="text-slate-400 text-base leading-relaxed">
+          Our approach: we work directly with business owners to understand their actual day-to-day operations, then build tools that fit like a glove — not generic software that requires workarounds.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-4 animate-on-scroll">
+        <div class="bg-slate-900/80 backdrop-blur border border-slate-800 rounded-xl p-6 feature-card-hover transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand/20 to-brand/5 border border-brand/20 flex items-center justify-center mb-4 icon-glow icon-glow-brand">
+            <svg class="w-7 h-7 text-brand-light" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="19" cy="17" r="3" fill="currentColor" opacity="0.3"/>
+              <path d="M17.5 17l1 1 2-2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h4 class="font-bold text-sm mb-2">Industry-Specific</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Built around how Philippine businesses actually operate, not a one-size-fits-all template.</p>
         </div>
-        <div class="float-card c2">
-          <div class="fc-icon">📋</div>
-          <div class="fc-val">12 Bookings</div>
-          <div class="fc-lbl">Confirmed Today</div>
+        <div class="bg-slate-900/80 backdrop-blur border border-slate-800 rounded-xl p-6 feature-card-hover transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 border border-accent/20 flex items-center justify-center mb-4 icon-glow icon-glow-amber">
+            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h4 class="font-bold text-sm mb-2">Fast &amp; Lightweight</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">No heavy apps to install. Works in any browser, on any device — even offline.</p>
+        </div>
+        <div class="bg-slate-900/80 backdrop-blur border border-slate-800 rounded-xl p-6 feature-card-hover transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-success/20 to-success/5 border border-success/20 flex items-center justify-center mb-4 icon-glow icon-glow-green">
+            <svg class="w-7 h-7 text-success" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h4 class="font-bold text-sm mb-2">Secure &amp; Reliable</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Role-based access, full audit trails, and cloud-backed data with automatic sync.</p>
+        </div>
+        <div class="bg-slate-900/80 backdrop-blur border border-slate-800 rounded-xl p-6 feature-card-hover transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/20 flex items-center justify-center mb-4 icon-glow icon-glow-purple">
+            <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h4 class="font-bold text-sm mb-2">Hands-on Support</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Direct access to the developer. Fast responses, real solutions — not a support ticket queue.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── ABOUT ── -->
-<section class="section" id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-text">
-        <div class="section-label">About Us</div>
-        <h2 class="section-title">We Build Software<br>That Works for You</h2>
-        <p class="section-sub">Lonetech Software &amp; Development Services is a Philippines-based technology company founded by Gaucho Agregado. We specialize in building practical, industry-specific management solutions that automate the tedious parts of running a business — so owners can focus on what matters: growing their brand and serving their customers.</p>
-        <p class="section-sub">Our approach is simple: we work directly with business owners to understand their actual day-to-day operations, then build tools that fit like a glove — not generic software that requires workarounds.</p>
-      </div>
-      <div class="about-values">
-        <div class="about-val">
-          <div class="av-icon">🎯</div>
-          <h4>Industry-Specific</h4>
-          <p>Built around how Philippine businesses actually operate, not a one-size-fits-all template.</p>
-        </div>
-        <div class="about-val">
-          <div class="av-icon">⚡</div>
-          <h4>Fast &amp; Lightweight</h4>
-          <p>No heavy apps to install. Works in any browser, on any device — even offline.</p>
-        </div>
-        <div class="about-val">
-          <div class="av-icon">🔒</div>
-          <h4>Secure &amp; Reliable</h4>
-          <p>Role-based access, full audit trails, and cloud-backed data with automatic sync.</p>
-        </div>
-        <div class="about-val">
-          <div class="av-icon">🤝</div>
-          <h4>Hands-on Support</h4>
-          <p>Direct access to the developer. Fast responses, real solutions — not a support ticket queue.</p>
-        </div>
-      </div>
+<!-- ═══════════════════════ PRODUCT SHOWCASE ═══════════════════════ -->
+<section id="demo" class="py-24 md:py-32 bg-gradient-to-b from-slate-950 to-slate-900">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 animate-on-scroll">
+      <div class="text-brand text-xs font-bold uppercase tracking-widest mb-4">What's Inside</div>
+      <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-4">Everything You Need, in One System</h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto">From booking to payroll to analytics — explore the modules that power your spa operations.</p>
     </div>
 
-    <!-- Mission & Vision -->
-    <div class="mv-grid">
-      <div class="mv-card vision">
-        <div class="mv-icon">🔭</div>
-        <div class="mv-label">Our Vision</div>
-        <h3 class="mv-title">To empower every Filipino service business with simple, affordable technology</h3>
-        <p class="mv-text">So owners can focus on growing their business and serving their customers — not drowning in paperwork, spreadsheets, and manual processes.</p>
+    <!-- Scrolling feature showcase (Graphite-style) -->
+    <div class="space-y-6">
+      <!-- Row 1 -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="showcase-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group">
+          <div class="p-8 pb-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 text-brand text-xs font-bold mb-4"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Reservations</div>
+            <h3 class="text-xl font-bold mb-2">Smart Reservations Calendar</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Full-featured calendar with drag-and-drop rescheduling, automatic therapist conflict detection, and daily schedule view.</p>
+          </div>
+          <div class="px-8 pb-6">
+            <div class="bg-slate-950 border border-slate-800 rounded-xl p-4">
+              <div class="flex items-center justify-between mb-3 text-[10px]">
+                <span class="text-brand font-bold">April 2026</span>
+                <span class="text-slate-500">Schedule View</span>
+              </div>
+              <div class="grid grid-cols-5 gap-1.5">
+                <div class="bg-brand/10 rounded-md p-1.5 text-center"><div class="text-[9px] font-bold text-brand">Alysa</div><div class="mt-1 h-1 bg-emerald-500 rounded-full w-3/4 mx-auto"></div><div class="mt-0.5 h-1 bg-amber-500 rounded-full w-1/2 mx-auto"></div></div>
+                <div class="bg-brand/10 rounded-md p-1.5 text-center"><div class="text-[9px] font-bold text-brand">Jane</div><div class="mt-1 h-1 bg-emerald-500 rounded-full w-full mx-auto"></div></div>
+                <div class="bg-brand/10 rounded-md p-1.5 text-center"><div class="text-[9px] font-bold text-brand">Weng</div><div class="mt-1 h-1 bg-blue-500 rounded-full w-2/3 mx-auto"></div><div class="mt-0.5 h-1 bg-amber-500 rounded-full w-3/4 mx-auto"></div></div>
+                <div class="bg-brand/10 rounded-md p-1.5 text-center"><div class="text-[9px] font-bold text-brand">Dholsz</div><div class="mt-1 h-1 bg-slate-600 rounded-full w-1/3 mx-auto"></div></div>
+                <div class="bg-brand/10 rounded-md p-1.5 text-center"><div class="text-[9px] font-bold text-brand">Maya</div><div class="mt-1 h-1 bg-amber-500 rounded-full w-2/3 mx-auto"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group">
+          <div class="p-8 pb-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold mb-4"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> Payroll</div>
+            <h3 class="text-xl font-bold mb-2">Automated Payroll Engine</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">Commissions, overtime, daily hour bonuses, rest day pay, attendance bonuses, and deductions — computed instantly every cut-off.</p>
+          </div>
+          <div class="px-8 pb-6">
+            <div class="bg-slate-950 border border-slate-800 rounded-xl p-4">
+              <div class="flex gap-3 mb-3">
+                <div class="flex-1 bg-slate-800/60 rounded-lg p-2 text-center"><div class="text-[9px] text-slate-500">TOTAL PAY</div><div class="text-sm font-black text-success">₱42,350</div></div>
+                <div class="flex-1 bg-slate-800/60 rounded-lg p-2 text-center"><div class="text-[9px] text-slate-500">COMMISSION</div><div class="text-sm font-black text-accent">₱18,200</div></div>
+              </div>
+              <div class="space-y-1.5">
+                <div class="flex items-center justify-between text-[10px] py-1 border-b border-slate-800"><span class="font-semibold">Alysa</span><span class="text-slate-400">14 svcs</span><span class="text-success font-bold">₱12,800</span></div>
+                <div class="flex items-center justify-between text-[10px] py-1 border-b border-slate-800"><span class="font-semibold">Jane</span><span class="text-slate-400">11 svcs</span><span class="text-success font-bold">₱11,200</span></div>
+                <div class="flex items-center justify-between text-[10px] py-1"><span class="font-semibold">Weng</span><span class="text-slate-400">8 svcs</span><span class="text-success font-bold">₱9,400</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="mv-card mission">
-        <div class="mv-icon">🚀</div>
-        <div class="mv-label">Our Mission</div>
-        <h3 class="mv-title">We build easy-to-use management systems that automate daily operations</h3>
-        <p class="mv-text">Starting with the wellness industry and expanding to every service business in the Philippines where owners are still doing everything by hand.</p>
+
+      <!-- Row 2 -->
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="showcase-card bg-slate-900 border border-slate-800 rounded-2xl p-8 group">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-bold mb-4"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Time Clock</div>
+          <h3 class="text-lg font-bold mb-2">Time Clock &amp; Geofencing</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-4">One-tap clock in with GPS verification. Late arrivals and overtime tracked automatically.</p>
+          <div class="flex gap-2">
+            <div class="flex-1 bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-2 text-center">
+              <div class="text-[10px] font-bold text-emerald-400">Alysa</div>
+              <div class="text-[9px] text-slate-500">12:05 PM</div>
+              <div class="text-[9px] text-emerald-400 font-semibold">IN</div>
+            </div>
+            <div class="flex-1 bg-amber-500/10 border border-amber-500/20 rounded-lg p-2 text-center">
+              <div class="text-[10px] font-bold text-amber-400">Jane</div>
+              <div class="text-[9px] text-slate-500">12:32 PM</div>
+              <div class="text-[9px] text-amber-400 font-semibold">LATE</div>
+            </div>
+            <div class="flex-1 bg-slate-800/60 border border-slate-700 rounded-lg p-2 text-center">
+              <div class="text-[10px] font-bold text-slate-400">Weng</div>
+              <div class="text-[9px] text-slate-500">—</div>
+              <div class="text-[9px] text-slate-500 font-semibold">OUT</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-card bg-slate-900 border border-slate-800 rounded-2xl p-8 group">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-bold mb-4"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg> Analytics</div>
+          <h3 class="text-lg font-bold mb-2">Business Analytics</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-4">Revenue trends, break-even analysis, service performance — all in real-time dashboards.</p>
+          <div class="flex items-end gap-1.5 h-16">
+            <div class="flex-1 bg-brand/50 rounded-t-md" style="height:45%"></div>
+            <div class="flex-1 bg-brand/60 rounded-t-md" style="height:60%"></div>
+            <div class="flex-1 bg-brand/40 rounded-t-md" style="height:35%"></div>
+            <div class="flex-1 bg-brand/70 rounded-t-md" style="height:75%"></div>
+            <div class="flex-1 bg-brand/50 rounded-t-md" style="height:55%"></div>
+            <div class="flex-1 bg-success/60 rounded-t-md" style="height:85%"></div>
+            <div class="flex-1 bg-success/50 rounded-t-md" style="height:70%"></div>
+            <div class="flex-1 bg-success/40 rounded-t-md" style="height:50%"></div>
+          </div>
+        </div>
+
+        <div class="showcase-card bg-slate-900 border border-slate-800 rounded-2xl p-8 group">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold mb-4"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> Admin</div>
+          <h3 class="text-lg font-bold mb-2">Admin Panel</h3>
+          <p class="text-sm text-slate-400 leading-relaxed mb-4">Manage therapists, services, pricing, promos, and payroll settings — full control center.</p>
+          <div class="space-y-1.5">
+            <div class="flex items-center gap-2 text-[10px]"><span class="w-2 h-2 rounded-full bg-emerald-400"></span><span class="font-semibold">Anna</span><span class="text-slate-500">Regular · Mon rest</span><span class="ml-auto text-emerald-400">Active</span></div>
+            <div class="flex items-center gap-2 text-[10px]"><span class="w-2 h-2 rounded-full bg-emerald-400"></span><span class="font-semibold">Beth</span><span class="text-slate-500">Regular · Tue rest</span><span class="ml-auto text-emerald-400">Active</span></div>
+            <div class="flex items-center gap-2 text-[10px]"><span class="w-2 h-2 rounded-full bg-amber-400"></span><span class="font-semibold">Diana</span><span class="text-slate-500">Trainee · Wed rest</span><span class="ml-auto text-amber-400">Training</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="showcase-card bg-slate-900 border border-slate-800 rounded-2xl p-8 group">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 text-rose-400 text-xs font-bold mb-4"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> Mobile</div>
+          <h3 class="text-lg font-bold mb-2">Mobile-Optimized Experience</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Progressive Web App — installable on any phone or tablet without an app store. Works offline and syncs automatically when back online. Manages bookings with swipe gestures.</p>
+        </div>
+        <div class="showcase-card bg-slate-900 border border-slate-800 rounded-2xl p-8 group">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold mb-4"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> Break-even</div>
+          <h3 class="text-lg font-bold mb-2">Break-even &amp; Profitability</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Know exactly how much revenue you need each month. Track net profit, margins, and trends — with visual charts and AI-powered insights for forecasting.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── PRODUCT SLIDESHOW ── -->
-<section class="section" id="demo" style="background:linear-gradient(180deg,var(--dark2) 0%,var(--dark) 100%)">
-  <div class="container">
-    <div class="text-center" style="margin-bottom:40px">
-      <div class="section-label">What's Inside</div>
-      <h2 class="section-title">Everything You Need, in One System</h2>
-      <p class="section-sub mx-auto">From booking to payroll to analytics — explore the modules that power your spa operations.</p>
+<!-- ═══════════════════════ FEATURES GRID ═══════════════════════ -->
+<section id="features" class="py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 animate-on-scroll">
+      <div class="text-brand text-xs font-bold uppercase tracking-widest mb-4">Flagship Product</div>
+      <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-4">Spa &amp; Wellness Management System</h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto">Everything a spa or wellness business needs to operate — in one powerful, easy-to-use system.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 animate-on-scroll">
+      <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-8 feature-card-hover transition-all duration-300">
+        <div class="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center mb-5"><svg class="w-6 h-6 text-brand-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg></div>
+        <h3 class="font-bold text-base mb-2">Smart Reservations</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Interactive calendar with drag-and-drop rescheduling, automatic conflict detection, and real-time therapist availability.</p>
+      </div>
+      <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-8 feature-card-hover transition-all duration-300">
+        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5"><svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <h3 class="font-bold text-base mb-2">Automated Payroll</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Commissions, overtime, daily hour bonuses, rest day pay, attendance bonuses, and deductions — computed instantly.</p>
+      </div>
+      <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-8 feature-card-hover transition-all duration-300">
+        <div class="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center mb-5"><svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3 class="font-bold text-base mb-2">Time Clock &amp; Geofencing</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Therapists clock in from their phones with location verification. Late arrivals and overtime tracked automatically.</p>
+      </div>
+      <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-8 feature-card-hover transition-all duration-300">
+        <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-5"><svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+        <h3 class="font-bold text-base mb-2">Business Analytics</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Revenue trends, break-even analysis, service performance, and therapist productivity — all in real-time dashboards.</p>
+      </div>
+      <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-8 feature-card-hover transition-all duration-300">
+        <div class="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center mb-5"><svg class="w-6 h-6 text-rose-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+        <h3 class="font-bold text-base mb-2">Full Audit Trail</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Every booking creation, edit, cancellation, and status change is logged with the user's name and timestamp.</p>
+      </div>
+      <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-8 feature-card-hover transition-all duration-300">
+        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-5"><svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <h3 class="font-bold text-base mb-2">Works Everywhere</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Progressive Web App — installable on any phone or tablet without an app store. Works offline and syncs automatically.</p>
+      </div>
     </div>
 
-    <div class="slideshow" id="slideshow">
-      <button class="slide-arrow prev" onclick="slideGo(-1)">‹</button>
-      <button class="slide-arrow next" onclick="slideGo(1)">›</button>
-      <div class="slide-container">
-        <div class="slide-track" id="slideTrack">
+    <!-- Extra highlights bar -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 animate-on-scroll">
+      <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-5 text-center">
+        <div class="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center mb-2 mx-auto"><svg class="w-5 h-5 text-brand-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></div>
+        <div class="text-sm font-bold">Digital Payslips</div>
+      </div>
+      <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-5 text-center">
+        <div class="w-10 h-10 rounded-lg bg-success/10 flex items-center justify-center mb-2 mx-auto"><svg class="w-5 h-5 text-success" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+        <div class="text-sm font-bold">GCash &amp; Split Payments</div>
+      </div>
+      <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-5 text-center">
+        <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-2 mx-auto"><svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
+        <div class="text-sm font-bold">Promos &amp; Memberships</div>
+      </div>
+      <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-5 text-center">
+        <div class="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center mb-2 mx-auto"><svg class="w-5 h-5 text-rose-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div>
+        <div class="text-sm font-bold">Push Notifications</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-          <!-- 1. Reservations -->
-          <div class="slide">
-            <div class="slide-visual" style="background:linear-gradient(135deg,#1e1b4b,#312e81)">
-              <svg viewBox="0 0 320 240" fill="none"><rect x="10" y="30" width="300" height="190" rx="10" fill="#1e293b" stroke="#4f46e5" stroke-width="1"/><rect x="10" y="30" width="300" height="30" rx="10" fill="#4f46e5" fill-opacity="0.2"/><text x="160" y="50" text-anchor="middle" fill="#818cf8" font-size="11" font-weight="700">April 2026</text><line x1="55" y1="72" x2="55" y2="215" stroke="#334155" stroke-width="0.5"/><line x1="100" y1="72" x2="100" y2="215" stroke="#334155" stroke-width="0.5"/><line x1="145" y1="72" x2="145" y2="215" stroke="#334155" stroke-width="0.5"/><line x1="190" y1="72" x2="190" y2="215" stroke="#334155" stroke-width="0.5"/><line x1="235" y1="72" x2="235" y2="215" stroke="#334155" stroke-width="0.5"/><line x1="280" y1="72" x2="280" y2="215" stroke="#334155" stroke-width="0.5"/><rect x="62" y="88" width="30" height="7" rx="3" fill="#10b981" opacity="0.8"/><rect x="62" y="99" width="22" height="7" rx="3" fill="#f59e0b" opacity="0.8"/><rect x="152" y="88" width="28" height="7" rx="3" fill="#818cf8" opacity="0.8"/><rect x="197" y="88" width="32" height="7" rx="3" fill="#10b981" opacity="0.8"/><rect x="107" y="130" width="30" height="7" rx="3" fill="#818cf8" opacity="0.8"/><rect x="242" y="130" width="28" height="7" rx="3" fill="#f59e0b" opacity="0.8"/><circle cx="170" cy="135" r="12" fill="#818cf8" fill-opacity="0.3" stroke="#818cf8" stroke-width="1.5"/><text x="170" y="139" text-anchor="middle" fill="#c7d2fe" font-size="10" font-weight="700">8</text><rect x="62" y="170" width="26" height="7" rx="3" fill="#10b981" opacity="0.8"/><rect x="152" y="170" width="30" height="7" rx="3" fill="#f59e0b" opacity="0.8"/><rect x="197" y="170" width="20" height="7" rx="3" fill="#818cf8" opacity="0.8"/><text x="33" y="68" text-anchor="middle" fill="#64748b" font-size="7">SUN</text><text x="78" y="68" text-anchor="middle" fill="#64748b" font-size="7">MON</text><text x="123" y="68" text-anchor="middle" fill="#64748b" font-size="7">TUE</text><text x="168" y="68" text-anchor="middle" fill="#64748b" font-size="7">WED</text><text x="213" y="68" text-anchor="middle" fill="#64748b" font-size="7">THU</text><text x="258" y="68" text-anchor="middle" fill="#64748b" font-size="7">FRI</text><text x="296" y="68" text-anchor="middle" fill="#64748b" font-size="7">SAT</text><rect x="10" y="4" width="70" height="18" rx="5" fill="#10b981" fill-opacity="0.15"/><text x="45" y="17" text-anchor="middle" fill="#10b981" font-size="8" font-weight="600">+ New Booking</text></svg>
-            </div>
-            <div class="slide-info">
-              <div class="slide-icon">📅</div>
-              <div class="slide-title">Smart Reservations</div>
-              <div class="slide-desc">A full-featured calendar that shows all your bookings at a glance. Drag-and-drop to reschedule, click to edit, and never double-book a therapist again.</div>
-              <ul class="slide-features">
-                <li>Interactive monthly calendar with color-coded statuses</li>
-                <li>Automatic therapist conflict detection</li>
-                <li>Drag-and-drop rescheduling</li>
-                <li>Daily schedule view with timeline</li>
-                <li>Walk-in, online booking, and home service support</li>
-              </ul>
-            </div>
-          </div>
+<!-- ═══════════════════════ HOW IT WORKS ═══════════════════════ -->
+<section id="how" class="py-24 md:py-32 bg-gradient-to-b from-slate-900 to-slate-950">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 animate-on-scroll">
+      <div class="text-brand text-xs font-bold uppercase tracking-widest mb-4">How It Works</div>
+      <h2 class="text-3xl md:text-5xl font-black tracking-tight">Up and Running in <span class="gradient-text">4 Simple Steps</span></h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 relative animate-on-scroll">
+      <!-- Connecting line (desktop only) -->
+      <div class="hidden md:block absolute top-8 left-[15%] right-[15%] h-0.5 bg-gradient-to-r from-brand to-accent opacity-20"></div>
 
-          <!-- 2. Mobile -->
-          <div class="slide">
-            <div class="slide-visual" style="background:linear-gradient(135deg,#14532d,#166534)">
-              <svg viewBox="0 0 200 320" fill="none"><rect x="40" y="10" width="120" height="300" rx="20" fill="#1e293b" stroke="#22c55e" stroke-width="1.5"/><rect x="70" y="6" width="60" height="10" rx="5" fill="#0f172a"/><rect x="50" y="36" width="100" height="24" rx="6" fill="#166534" fill-opacity="0.3"/><text x="100" y="52" text-anchor="middle" fill="#4ade80" font-size="9" font-weight="700">Wed, Apr 8</text><rect x="54" y="70" width="92" height="40" rx="6" fill="#1e293b" stroke="#334155"/><rect x="60" y="78" width="50" height="5" rx="2" fill="#4ade80" opacity="0.6"/><rect x="60" y="87" width="35" height="4" rx="2" fill="#64748b"/><rect x="60" y="95" width="40" height="4" rx="2" fill="#64748b"/><circle cx="135" cy="87" r="8" fill="#10b981" fill-opacity="0.2"/><text x="135" y="90" text-anchor="middle" fill="#10b981" font-size="7">✓</text><rect x="54" y="118" width="92" height="40" rx="6" fill="#1e293b" stroke="#334155"/><rect x="60" y="126" width="55" height="5" rx="2" fill="#f59e0b" opacity="0.6"/><rect x="60" y="135" width="30" height="4" rx="2" fill="#64748b"/><rect x="60" y="143" width="45" height="4" rx="2" fill="#64748b"/><rect x="54" y="166" width="92" height="40" rx="6" fill="#1e293b" stroke="#334155"/><rect x="60" y="174" width="45" height="5" rx="2" fill="#818cf8" opacity="0.6"/><rect x="60" y="183" width="40" height="4" rx="2" fill="#64748b"/><rect x="60" y="191" width="35" height="4" rx="2" fill="#64748b"/><rect x="54" y="214" width="92" height="40" rx="6" fill="#1e293b" stroke="#334155"/><rect x="60" y="222" width="50" height="5" rx="2" fill="#10b981" opacity="0.6"/><rect x="60" y="231" width="38" height="4" rx="2" fill="#64748b"/><circle cx="100" cy="278" r="16" fill="#22c55e" fill-opacity="0.2"/><text x="100" y="283" text-anchor="middle" fill="#4ade80" font-size="14" font-weight="700">+</text></svg>
-            </div>
-            <div class="slide-info">
-              <div class="slide-icon">📱</div>
-              <div class="slide-title">Mobile-Optimized View</div>
-              <div class="slide-desc">Your receptionist or manager can manage bookings right from their phone. The mobile view is designed for quick actions — swipe between days, tap to confirm or reschedule.</div>
-              <ul class="slide-features">
-                <li>Day-by-day card view optimized for small screens</li>
-                <li>One-tap status updates (confirm, cancel, done)</li>
-                <li>Real-time sync with desktop version</li>
-                <li>Quick-add new bookings on the go</li>
-                <li>Works offline — syncs when back online</li>
-              </ul>
-            </div>
-          </div>
+      <div class="text-center relative">
+        <div class="w-16 h-16 rounded-full bg-slate-900 border-2 border-brand flex items-center justify-center text-2xl font-black text-brand mx-auto mb-5 relative z-10">1</div>
+        <h4 class="font-bold text-sm mb-2">Schedule a Demo</h4>
+        <p class="text-xs text-slate-400">We show you the system using your actual services. Free, no commitment.</p>
+      </div>
+      <div class="text-center relative">
+        <div class="w-16 h-16 rounded-full bg-slate-900 border-2 border-brand-light flex items-center justify-center text-2xl font-black text-brand-light mx-auto mb-5 relative z-10">2</div>
+        <h4 class="font-bold text-sm mb-2">We Set It Up</h4>
+        <p class="text-xs text-slate-400">We configure your therapists, services, prices, and payroll rules.</p>
+      </div>
+      <div class="text-center relative">
+        <div class="w-16 h-16 rounded-full bg-slate-900 border-2 border-accent flex items-center justify-center text-2xl font-black text-accent mx-auto mb-5 relative z-10">3</div>
+        <h4 class="font-bold text-sm mb-2">Train Your Team</h4>
+        <p class="text-xs text-slate-400">Quick onboarding — most learn the system in under 30 minutes.</p>
+      </div>
+      <div class="text-center relative">
+        <div class="w-16 h-16 rounded-full bg-slate-900 border-2 border-success flex items-center justify-center text-2xl font-black text-success mx-auto mb-5 relative z-10">4</div>
+        <h4 class="font-bold text-sm mb-2">Go Live</h4>
+        <p class="text-xs text-slate-400">Start managing bookings and running payroll from day one.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-          <!-- 3. Payroll -->
-          <div class="slide">
-            <div class="slide-visual" style="background:linear-gradient(135deg,#422006,#713f12)">
-              <svg viewBox="0 0 320 240" fill="none"><rect x="10" y="10" width="300" height="220" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/><text x="25" y="36" fill="#f59e0b" font-size="12" font-weight="800">Payroll System</text><text x="25" y="50" fill="#64748b" font-size="8">April 1–15, 2026</text><rect x="20" y="60" width="80" height="36" rx="6" fill="#1e293b" stroke="#334155"/><text x="30" y="78" fill="#64748b" font-size="7">TOTAL PAY</text><text x="30" y="92" fill="#10b981" font-size="13" font-weight="800">₱42,350</text><rect x="110" y="60" width="80" height="36" rx="6" fill="#1e293b" stroke="#334155"/><text x="120" y="78" fill="#64748b" font-size="7">COMMISSION</text><text x="120" y="92" fill="#f59e0b" font-size="13" font-weight="800">₱18,200</text><rect x="200" y="60" width="80" height="36" rx="6" fill="#1e293b" stroke="#334155"/><text x="210" y="78" fill="#64748b" font-size="7">THERAPISTS</text><text x="210" y="92" fill="#818cf8" font-size="13" font-weight="800">4</text><rect x="20" y="108" width="270" height="18" rx="4" fill="#334155" fill-opacity="0.5"/><text x="30" y="120" fill="#94a3b8" font-size="8" font-weight="600">NAME</text><text x="130" y="120" fill="#94a3b8" font-size="8" font-weight="600">SERVICES</text><text x="200" y="120" fill="#94a3b8" font-size="8" font-weight="600">COMMISSION</text><text x="265" y="120" fill="#94a3b8" font-size="8" font-weight="600">PAY</text><rect x="20" y="130" width="270" height="20" rx="0" fill="transparent"/><text x="30" y="144" fill="#f8fafc" font-size="9" font-weight="600">Anna</text><text x="130" y="144" fill="#94a3b8" font-size="9">14 services</text><text x="200" y="144" fill="#f59e0b" font-size="9">₱6,400</text><text x="265" y="144" fill="#10b981" font-size="9" font-weight="700">₱12,800</text><line x1="20" y1="150" x2="290" y2="150" stroke="#334155" stroke-width="0.5"/><text x="30" y="166" fill="#f8fafc" font-size="9" font-weight="600">Beth</text><text x="130" y="166" fill="#94a3b8" font-size="9">11 services</text><text x="200" y="166" fill="#f59e0b" font-size="9">₱5,100</text><text x="265" y="166" fill="#10b981" font-size="9" font-weight="700">₱11,200</text><line x1="20" y1="172" x2="290" y2="172" stroke="#334155" stroke-width="0.5"/><text x="30" y="188" fill="#f8fafc" font-size="9" font-weight="600">Diana</text><text x="130" y="188" fill="#94a3b8" font-size="9">8 services</text><text x="200" y="188" fill="#f59e0b" font-size="9">₱3,600</text><text x="265" y="188" fill="#10b981" font-size="9" font-weight="700">₱9,400</text></svg>
-            </div>
-            <div class="slide-info">
-              <div class="slide-icon">💰</div>
-              <div class="slide-title">Automated Payroll</div>
-              <div class="slide-desc">Stop spending hours on spreadsheets. The system computes commissions, overtime, bonuses, and deductions for every therapist — automatically, every cut-off.</div>
-              <ul class="slide-features">
-                <li>Per-service commission calculation</li>
-                <li>Daily hour bonus tiers (4h → ₱80 up to 7h+ → ₱160)</li>
-                <li>Overtime with GC early arrival tracking</li>
-                <li>Attendance bonus &amp; rest day work pay</li>
-                <li>Digital payslips — printable or screenshot-ready</li>
-              </ul>
-            </div>
-          </div>
+<!-- ═══════════════════════ PRICING ═══════════════════════ -->
+<section id="pricing" class="py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 animate-on-scroll">
+      <div class="text-brand text-xs font-bold uppercase tracking-widest mb-4">Pricing</div>
+      <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-4">Simple, Transparent Pricing</h2>
+      <p class="text-slate-400 text-lg max-w-xl mx-auto">No hidden fees. No long-term contracts. Start free and upgrade when you're ready.</p>
+    </div>
 
-          <!-- 4. Break-even -->
-          <div class="slide">
-            <div class="slide-visual" style="background:linear-gradient(135deg,#1e1b4b,#312e81)">
-              <svg viewBox="0 0 320 240" fill="none"><rect x="10" y="10" width="300" height="220" rx="10" fill="#1e293b" stroke="#818cf8" stroke-width="1"/><text x="25" y="36" fill="#818cf8" font-size="12" font-weight="800">Break-even Analysis</text><rect x="20" y="50" width="135" height="36" rx="6" fill="#1e293b" stroke="#334155"/><text x="30" y="68" fill="#64748b" font-size="7">NET PROFIT</text><text x="30" y="82" fill="#10b981" font-size="14" font-weight="800">₱28,400</text><rect x="165" y="50" width="135" height="36" rx="6" fill="#1e293b" stroke="#334155"/><text x="175" y="68" fill="#64748b" font-size="7">MARGIN</text><text x="175" y="82" fill="#10b981" font-size="14" font-weight="800">34.2%</text><!-- Chart area --><line x1="40" y1="200" x2="290" y2="200" stroke="#334155" stroke-width="1"/><line x1="40" y1="100" x2="40" y2="200" stroke="#334155" stroke-width="1"/><polyline points="50,185 90,170 130,155 170,140 210,125 250,115 280,105" stroke="#818cf8" stroke-width="2" fill="none"/><polyline points="50,190 90,180 130,170 170,162 210,155 250,150 280,148" stroke="#f59e0b" stroke-width="2" fill="none" stroke-dasharray="4,3"/><line x1="170" y1="100" x2="170" y2="200" stroke="#10b981" stroke-width="1" stroke-dasharray="3,3"/><text x="170" y="215" text-anchor="middle" fill="#10b981" font-size="7" font-weight="600">Break-even Point</text><rect x="195" y="96" width="8" height="8" rx="2" fill="#818cf8"/><text x="208" y="103" fill="#94a3b8" font-size="7">Revenue</text><rect x="245" y="96" width="8" height="8" rx="2" fill="#f59e0b"/><text x="258" y="103" fill="#94a3b8" font-size="7">Costs</text></svg>
-            </div>
-            <div class="slide-info">
-              <div class="slide-icon">📊</div>
-              <div class="slide-title">Break-even &amp; Profitability</div>
-              <div class="slide-desc">Know exactly how much revenue you need each month to cover all expenses. Track net profit, margins, and trends — with visual charts that make the data easy to understand.</div>
-              <ul class="slide-features">
-                <li>Monthly &amp; quarterly financial dashboards</li>
-                <li>Revenue vs. cost trend lines</li>
-                <li>Expense tracking (rent, utilities, supplies)</li>
-                <li>P&amp;L statement generation</li>
-                <li>AI-powered insights &amp; forecasting</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- 5. Analytics -->
-          <div class="slide">
-            <div class="slide-visual" style="background:linear-gradient(135deg,#0c4a6e,#075985)">
-              <svg viewBox="0 0 320 240" fill="none"><rect x="10" y="10" width="300" height="220" rx="10" fill="#1e293b" stroke="#0ea5e9" stroke-width="1"/><text x="25" y="36" fill="#0ea5e9" font-size="12" font-weight="800">Business Analytics</text><rect x="20" y="48" width="65" height="34" rx="6" fill="#1e293b" stroke="#334155"/><text x="30" y="62" fill="#64748b" font-size="6">BOOKINGS</text><text x="30" y="76" fill="#f8fafc" font-size="12" font-weight="800">156</text><rect x="95" y="48" width="65" height="34" rx="6" fill="#1e293b" stroke="#334155"/><text x="105" y="62" fill="#64748b" font-size="6">REVENUE</text><text x="105" y="76" fill="#10b981" font-size="12" font-weight="800">₱82K</text><rect x="170" y="48" width="65" height="34" rx="6" fill="#1e293b" stroke="#334155"/><text x="180" y="62" fill="#64748b" font-size="6">AVG/DAY</text><text x="180" y="76" fill="#f59e0b" font-size="12" font-weight="800">₱2.7K</text><rect x="245" y="48" width="55" height="34" rx="6" fill="#1e293b" stroke="#334155"/><text x="255" y="62" fill="#64748b" font-size="6">TIPS</text><text x="255" y="76" fill="#818cf8" font-size="12" font-weight="800">₱4.2K</text><!-- Bar chart --><rect x="35" y="120" width="22" height="70" rx="3" fill="#0ea5e9" opacity="0.7"/><rect x="65" y="105" width="22" height="85" rx="3" fill="#0ea5e9" opacity="0.8"/><rect x="95" y="130" width="22" height="60" rx="3" fill="#0ea5e9" opacity="0.6"/><rect x="125" y="95" width="22" height="95" rx="3" fill="#0ea5e9" opacity="0.9"/><rect x="155" y="115" width="22" height="75" rx="3" fill="#0ea5e9" opacity="0.7"/><rect x="185" y="100" width="22" height="90" rx="3" fill="#10b981" opacity="0.8"/><rect x="215" y="110" width="22" height="80" rx="3" fill="#10b981" opacity="0.7"/><rect x="245" y="135" width="22" height="55" rx="3" fill="#10b981" opacity="0.6"/><rect x="275" y="145" width="22" height="45" rx="3" fill="#10b981" opacity="0.5"/><line x1="25" y1="190" x2="305" y2="190" stroke="#334155"/><text x="46" y="205" text-anchor="middle" fill="#64748b" font-size="6">Jan</text><text x="76" y="205" text-anchor="middle" fill="#64748b" font-size="6">Feb</text><text x="106" y="205" text-anchor="middle" fill="#64748b" font-size="6">Mar</text><text x="136" y="205" text-anchor="middle" fill="#64748b" font-size="6">Apr</text><text x="166" y="205" text-anchor="middle" fill="#64748b" font-size="6">May</text><text x="196" y="205" text-anchor="middle" fill="#64748b" font-size="6">Jun</text></svg>
-            </div>
-            <div class="slide-info">
-              <div class="slide-icon">📈</div>
-              <div class="slide-title">Business Analytics</div>
-              <div class="slide-desc">Make data-driven decisions. See which services are most popular, which therapists are most productive, and how your revenue trends over time — all in real-time dashboards.</div>
-              <ul class="slide-features">
-                <li>Revenue, bookings, and tips tracking</li>
-                <li>Top services by frequency and revenue</li>
-                <li>Therapist performance leaderboards</li>
-                <li>Payment mode breakdown (cash, GCash, split)</li>
-                <li>Trend analysis with 7-day to yearly ranges</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- 6. Time Clock -->
-          <div class="slide">
-            <div class="slide-visual" style="background:linear-gradient(135deg,#4a1d96,#6d28d9)">
-              <svg viewBox="0 0 320 240" fill="none"><rect x="10" y="10" width="300" height="220" rx="10" fill="#1e293b" stroke="#a78bfa" stroke-width="1"/><rect x="60" y="20" width="200" height="55" rx="10" fill="#7c3aed" fill-opacity="0.2"/><text x="160" y="42" text-anchor="middle" fill="#c4b5fd" font-size="8" font-weight="600">⏰ Time Clock</text><text x="160" y="62" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="900">01:42 PM</text><!-- Staff cards --><rect x="25" y="88" width="130" height="48" rx="8" fill="#1e293b" stroke="#334155"/><circle cx="48" cy="112" r="12" fill="#10b981" fill-opacity="0.2"/><text x="48" y="116" text-anchor="middle" fill="#10b981" font-size="10">A</text><text x="68" y="106" fill="#f8fafc" font-size="9" font-weight="700">Anna</text><text x="68" y="118" fill="#10b981" font-size="7">Clocked in 12:05 PM</text><rect x="120" y="102" width="28" height="16" rx="4" fill="#10b981" fill-opacity="0.2"/><text x="134" y="113" text-anchor="middle" fill="#10b981" font-size="7" font-weight="600">IN</text><rect x="165" y="88" width="130" height="48" rx="8" fill="#1e293b" stroke="#334155"/><circle cx="188" cy="112" r="12" fill="#f59e0b" fill-opacity="0.2"/><text x="188" y="116" text-anchor="middle" fill="#f59e0b" font-size="10">B</text><text x="208" y="106" fill="#f8fafc" font-size="9" font-weight="700">Beth</text><text x="208" y="118" fill="#f59e0b" font-size="7">Clocked in 12:32 PM</text><rect x="260" y="102" width="28" height="16" rx="4" fill="#f59e0b" fill-opacity="0.2"/><text x="274" y="113" text-anchor="middle" fill="#f59e0b" font-size="7" font-weight="600">LATE</text><rect x="25" y="146" width="130" height="48" rx="8" fill="#1e293b" stroke="#334155"/><circle cx="48" cy="170" r="12" fill="#64748b" fill-opacity="0.2"/><text x="48" y="174" text-anchor="middle" fill="#64748b" font-size="10">D</text><text x="68" y="164" fill="#f8fafc" font-size="9" font-weight="700">Diana</text><text x="68" y="176" fill="#64748b" font-size="7">Not clocked in</text><rect x="120" y="160" width="28" height="16" rx="4" fill="#64748b" fill-opacity="0.2"/><text x="134" y="171" text-anchor="middle" fill="#64748b" font-size="7" font-weight="600">OUT</text><rect x="25" y="204" width="270" height="18" rx="5" fill="#7c3aed" fill-opacity="0.15"/><text x="160" y="216" text-anchor="middle" fill="#a78bfa" font-size="7">📍 Geofence: Angeles City · Radius 100m</text></svg>
-            </div>
-            <div class="slide-info">
-              <div class="slide-icon">⏰</div>
-              <div class="slide-title">Time Clock &amp; Attendance</div>
-              <div class="slide-desc">No more paper time logs. Therapists clock in with a tap — with optional geofencing to verify they're actually at the spa. Late arrivals and overtime are tracked automatically.</div>
-              <ul class="slide-features">
-                <li>One-tap clock in / clock out</li>
-                <li>GPS geofencing verification</li>
-                <li>Automatic late &amp; undertime detection</li>
-                <li>Personal view for each therapist</li>
-                <li>Full time log history for payroll</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- 7. Admin -->
-          <div class="slide">
-            <div class="slide-visual" style="background:linear-gradient(135deg,#1c1917,#292524)">
-              <svg viewBox="0 0 320 240" fill="none"><rect x="10" y="10" width="300" height="220" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/><text x="25" y="36" fill="#f59e0b" font-size="12" font-weight="800">Admin Panel</text><!-- Tabs --><rect x="20" y="46" width="55" height="18" rx="4" fill="#f59e0b" fill-opacity="0.2"/><text x="47" y="58" text-anchor="middle" fill="#f59e0b" font-size="7" font-weight="600">Therapists</text><rect x="80" y="46" width="48" height="18" rx="4" fill="transparent"/><text x="104" y="58" text-anchor="middle" fill="#64748b" font-size="7">Services</text><rect x="133" y="46" width="50" height="18" rx="4" fill="transparent"/><text x="158" y="58" text-anchor="middle" fill="#64748b" font-size="7">Members</text><rect x="188" y="46" width="45" height="18" rx="4" fill="transparent"/><text x="210" y="58" text-anchor="middle" fill="#64748b" font-size="7">Settings</text><rect x="238" y="46" width="50" height="18" rx="4" fill="transparent"/><text x="263" y="58" text-anchor="middle" fill="#64748b" font-size="7">Audit Log</text><!-- Table --><rect x="20" y="74" width="270" height="16" rx="3" fill="#334155" fill-opacity="0.5"/><text x="40" y="85" fill="#94a3b8" font-size="7" font-weight="600">NAME</text><text x="110" y="85" fill="#94a3b8" font-size="7" font-weight="600">ROLE</text><text x="175" y="85" fill="#94a3b8" font-size="7" font-weight="600">REST DAY</text><text x="240" y="85" fill="#94a3b8" font-size="7" font-weight="600">STATUS</text><text x="40" y="106" fill="#f8fafc" font-size="8" font-weight="600">Anna</text><rect x="95" y="97" width="45" height="12" rx="3" fill="#10b981" fill-opacity="0.2"/><text x="117" y="106" text-anchor="middle" fill="#10b981" font-size="7">Regular</text><text x="175" y="106" fill="#94a3b8" font-size="8">Monday</text><rect x="228" y="97" width="35" height="12" rx="3" fill="#10b981" fill-opacity="0.2"/><text x="245" y="106" text-anchor="middle" fill="#10b981" font-size="7">Active</text><text x="40" y="128" fill="#f8fafc" font-size="8" font-weight="600">Beth</text><rect x="95" y="119" width="45" height="12" rx="3" fill="#10b981" fill-opacity="0.2"/><text x="117" y="128" text-anchor="middle" fill="#10b981" font-size="7">Regular</text><text x="175" y="128" fill="#94a3b8" font-size="8">Tuesday</text><rect x="228" y="119" width="35" height="12" rx="3" fill="#10b981" fill-opacity="0.2"/><text x="245" y="128" text-anchor="middle" fill="#10b981" font-size="7">Active</text><text x="40" y="150" fill="#f8fafc" font-size="8" font-weight="600">Diana</text><rect x="95" y="141" width="38" height="12" rx="3" fill="#f59e0b" fill-opacity="0.2"/><text x="114" y="150" text-anchor="middle" fill="#f59e0b" font-size="7">Trainee</text><text x="175" y="150" fill="#94a3b8" font-size="8">Wednesday</text><rect x="228" y="141" width="35" height="12" rx="3" fill="#10b981" fill-opacity="0.2"/><text x="245" y="150" text-anchor="middle" fill="#10b981" font-size="7">Active</text><!-- Buttons --><rect x="20" y="175" width="65" height="20" rx="5" fill="#6366f1" fill-opacity="0.2"/><text x="52" y="188" text-anchor="middle" fill="#818cf8" font-size="7" font-weight="600">+ Add Therapist</text><rect x="95" y="175" width="60" height="20" rx="5" fill="transparent" stroke="#334155"/><text x="125" y="188" text-anchor="middle" fill="#64748b" font-size="7">DB Setup SQL</text></svg>
-            </div>
-            <div class="slide-info">
-              <div class="slide-icon">🛠️</div>
-              <div class="slide-title">Admin Panel</div>
-              <div class="slide-desc">Complete control over your spa configuration. Manage therapists, services, pricing, promos, and payroll settings — all from one centralized dashboard with full audit trail.</div>
-              <ul class="slide-features">
-                <li>Therapist management with roles &amp; rest days</li>
-                <li>Service &amp; pricing configuration</li>
-                <li>Member registration &amp; promo management</li>
-                <li>Full audit log — who changed what and when</li>
-                <li>Payroll settings &amp; shift configuration</li>
-              </ul>
-            </div>
-          </div>
-
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 animate-on-scroll">
+      <!-- Basic -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 transition-all duration-300 hover:border-slate-600">
+        <div class="text-sm text-slate-500 font-semibold uppercase tracking-wider mb-3">Basic</div>
+        <div class="flex items-baseline gap-1 mb-1">
+          <span class="text-4xl font-black">₱1,499</span>
+          <span class="text-slate-500 text-sm">/mo</span>
         </div>
-      </div>
-      <!-- Dots -->
-      <div class="slide-dots" id="slideDots"></div>
-      <!-- Progress bar -->
-      <div class="slide-progress"><div class="slide-progress-bar" id="slideProgress"></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ── FLAGSHIP PRODUCT ── -->
-<section class="section" id="product">
-  <div class="container">
-    <div class="product-header">
-      <div class="section-label">Flagship Product</div>
-      <h2 class="section-title">Spa &amp; Wellness Management System</h2>
-      <p class="section-sub mx-auto">Everything a spa or wellness business needs to operate — reservations, payroll, time tracking, analytics, and more — in one powerful, easy-to-use system.</p>
-    </div>
-
-    <div class="grid grid-3">
-      <div class="feature-card">
-        <div class="feature-icon fi-purple">📅</div>
-        <h3>Smart Reservations</h3>
-        <p>Interactive calendar with drag-and-drop rescheduling, automatic conflict detection, and real-time therapist availability. Supports walk-ins, online bookings, and home service scheduling.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon fi-amber">💰</div>
-        <h3>Automated Payroll</h3>
-        <p>Commissions, overtime, daily hour bonuses, rest day pay, attendance bonuses, and deductions — all computed instantly every cut-off. No spreadsheets, no errors.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon fi-green">⏰</div>
-        <h3>Time Clock &amp; Geofencing</h3>
-        <p>Therapists clock in from their phones with location verification. Late arrivals, undertimes, and overtime are tracked automatically.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon fi-blue">📊</div>
-        <h3>Business Analytics</h3>
-        <p>Revenue trends, break-even analysis, service performance, and therapist productivity — all in real-time dashboards that help you make smarter decisions.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon fi-rose">📜</div>
-        <h3>Full Audit Trail</h3>
-        <p>Every booking creation, edit, cancellation, and status change is logged with the user's name and timestamp. Complete accountability for your team.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon fi-cyan">📱</div>
-        <h3>Works Everywhere</h3>
-        <p>Progressive Web App — installable on any phone or tablet without an app store. Works offline and syncs automatically when back online.</p>
-      </div>
-    </div>
-
-    <!-- Extra highlights -->
-    <div class="grid grid-4" style="margin-top:32px">
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center">
-        <div style="font-size:1.6rem;margin-bottom:6px">🧾</div>
-        <div style="font-size:0.82rem;font-weight:700">Digital Payslips</div>
-      </div>
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center">
-        <div style="font-size:1.6rem;margin-bottom:6px">💳</div>
-        <div style="font-size:0.82rem;font-weight:700">GCash &amp; Split Payments</div>
-      </div>
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center">
-        <div style="font-size:1.6rem;margin-bottom:6px">🏷️</div>
-        <div style="font-size:0.82rem;font-weight:700">Promos &amp; Memberships</div>
-      </div>
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center">
-        <div style="font-size:1.6rem;margin-bottom:6px">🔔</div>
-        <div style="font-size:0.82rem;font-weight:700">Push Notifications</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── HOW IT WORKS ── -->
-<section class="section" id="how">
-  <div class="container">
-    <div class="text-center">
-      <div class="section-label">How It Works</div>
-      <h2 class="section-title">Up and Running in 4 Simple Steps</h2>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h4>Schedule a Demo</h4>
-        <p>We show you the system using your actual services and setup. Free, no commitment.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h4>We Set It Up</h4>
-        <p>We configure your therapists, services, prices, and payroll rules. You don't touch any code.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h4>Train Your Team</h4>
-        <p>Quick onboarding for your staff — most learn the system in under 30 minutes.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <h4>Go Live</h4>
-        <p>Start managing bookings, running payroll, and tracking performance — all from day one.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── PRICING ── -->
-<section class="section" id="pricing">
-  <div class="container">
-    <div class="text-center">
-      <div class="section-label">Pricing</div>
-      <h2 class="section-title">Simple, Transparent Pricing</h2>
-      <p class="section-sub mx-auto">No hidden fees. No long-term contracts. Start free and upgrade when you're ready.</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <div class="price-name">Starter</div>
-        <div class="price-amount">Free</div>
-        <div class="price-period">Perfect for trying things out</div>
-        <ul class="price-features">
-          <li>Reservation calendar</li>
-          <li>Up to 3 therapists</li>
-          <li>Basic payroll</li>
-          <li>Local data storage</li>
-          <li>7-day free trial of Pro features</li>
+        <div class="text-xs text-slate-500 mb-6">1 branch · up to 5 therapists</div>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Reservation calendar</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Full payroll with OT &amp; bonuses</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Time clock with PIN security</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Mobile booking app + QR</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Custom branding</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Cloud sync &amp; backup</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Authentication &amp; 2FA</li>
         </ul>
-        <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center">Get Started</a>
+        <a href="#contact" class="block w-full py-3 text-center border-2 border-slate-700 hover:border-brand text-slate-300 hover:text-white font-bold rounded-xl transition-all text-sm">Get Started</a>
       </div>
-      <div class="price-card featured">
-        <div class="price-name">Professional</div>
-        <div class="price-amount">₱2,500<span>/mo</span></div>
-        <div class="price-period">Per branch · billed monthly</div>
-        <ul class="price-features">
-          <li>Everything in Starter</li>
-          <li>Unlimited therapists</li>
-          <li>Cloud sync &amp; backup</li>
-          <li>Full payroll with OT &amp; bonuses</li>
-          <li>Time clock with geofencing</li>
-          <li>Audit trail</li>
-          <li>Business analytics</li>
-          <li>Online booking page</li>
-          <li>Push notifications</li>
-          <li>Priority support</li>
+
+      <!-- Professional (featured) -->
+      <div class="bg-slate-900 border-2 border-brand rounded-2xl p-8 relative pricing-featured">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand text-white text-[10px] font-bold uppercase tracking-wider px-4 py-1 rounded-full">Most Popular</div>
+        <div class="text-sm text-brand-light font-semibold uppercase tracking-wider mb-3">Professional</div>
+        <div class="flex items-baseline gap-1 mb-1">
+          <span class="text-4xl font-black">₱2,999</span>
+          <span class="text-slate-500 text-sm">/mo</span>
+        </div>
+        <div class="text-xs text-slate-500 mb-6">Up to 3 branches · 15 therapists each</div>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Everything in Basic</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Multi-branch management</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Branch-aware mobile booking</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> GPS geofencing</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Breakeven &amp; profit/loss</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Business analytics</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Audit trail</li>
         </ul>
-        <a href="#contact" class="btn btn-primary">Start Free Trial</a>
+        <a href="#contact" class="block w-full py-3 text-center bg-brand hover:bg-brand-dark text-white font-bold rounded-xl transition-all text-sm hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand/30">Start Free Trial</a>
       </div>
-      <div class="price-card">
-        <div class="price-name">Enterprise</div>
-        <div class="price-amount">Custom</div>
-        <div class="price-period">For multi-branch operations</div>
-        <ul class="price-features">
-          <li>Everything in Professional</li>
-          <li>Multi-branch dashboard</li>
-          <li>Chain-wide analytics</li>
-          <li>Custom integrations</li>
-          <li>Dedicated account manager</li>
-          <li>On-site training</li>
-          <li>SLA guarantee</li>
+
+      <!-- Pro -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 transition-all duration-300 hover:border-slate-600">
+        <div class="text-sm text-slate-500 font-semibold uppercase tracking-wider mb-3">Pro</div>
+        <div class="flex items-baseline gap-1 mb-1">
+          <span class="text-4xl font-black">₱5,999</span>
+          <span class="text-slate-500 text-sm">/mo</span>
+        </div>
+        <div class="text-xs text-slate-500 mb-6">Up to 10 branches · unlimited therapists</div>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Everything in Professional</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Unlimited therapists</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Upgraded cloud database</li>
         </ul>
-        <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center">Contact Us</a>
+        <a href="#contact" class="block w-full py-3 text-center border-2 border-slate-700 hover:border-brand text-slate-300 hover:text-white font-bold rounded-xl transition-all text-sm">Contact Us</a>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 transition-all duration-300 hover:border-slate-600">
+        <div class="text-sm text-slate-500 font-semibold uppercase tracking-wider mb-3">Enterprise</div>
+        <div class="flex items-baseline gap-1 mb-1">
+          <span class="text-4xl font-black">₱9,999</span>
+          <span class="text-slate-500 text-sm">/mo</span>
+        </div>
+        <div class="text-xs text-slate-500 mb-6">Up to 30 branches · unlimited everything</div>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Everything in Pro</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Up to 30 branches</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Custom domain</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> API access</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> Dedicated account manager</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> 99.9% uptime SLA</li>
+          <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-success font-bold mt-0.5">✓</span> ₱299/branch/mo beyond 30</li>
+        </ul>
+        <a href="#contact" class="block w-full py-3 text-center border-2 border-slate-700 hover:border-brand text-slate-300 hover:text-white font-bold rounded-xl transition-all text-sm">Contact Us</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── CTA ── -->
-<section class="cta-section">
-  <div class="container">
-    <h2>Ready to Modernize Your Business?</h2>
-    <p>Join spa owners who've eliminated payroll headaches and scheduling conflicts. Get a personalized demo — it's free.</p>
-    <a href="#contact" class="btn btn-accent">Schedule Your Free Demo →</a>
+<!-- ═══════════════════════ CTA ═══════════════════════ -->
+<section class="py-24 bg-gradient-to-r from-brand-dark to-purple-600 relative overflow-hidden cta-pattern">
+  <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+    <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-5">Ready to Modernize Your Business?</h2>
+    <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto">Join spa owners who've eliminated payroll headaches and scheduling conflicts. Get a personalized demo — it's free.</p>
+    <a href="#contact" class="inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent-dark text-slate-900 font-bold rounded-xl transition-all hover:-translate-y-0.5 hover:shadow-xl text-base">
+      Schedule Your Free Demo →
+    </a>
   </div>
 </section>
 
-<!-- ── CONTACT ── -->
-<section class="section" id="contact">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="section-label">Get in Touch</div>
-        <h2 class="section-title" style="font-size:2rem">Let's Talk About<br>Your Business</h2>
-        <p style="color:var(--text2);margin-bottom:32px;line-height:1.7">Whether you want a demo, have questions, or need a custom solution — we'd love to hear from you. Reach out and we'll respond within 24 hours.</p>
+<!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+<section id="contact" class="py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-16 items-start">
+      <!-- Info -->
+      <div class="animate-on-scroll">
+        <div class="text-brand text-xs font-bold uppercase tracking-widest mb-4">Get in Touch</div>
+        <h2 class="text-3xl md:text-4xl font-black tracking-tight mb-6 leading-tight">Let's Talk About<br><span class="gradient-text">Your Business</span></h2>
+        <p class="text-slate-400 text-base leading-relaxed mb-10">Whether you want a demo, have questions, or need a custom solution — we'd love to hear from you. Reach out and we'll respond within 24 hours.</p>
 
-        <div class="contact-item">
-          <div class="ci-icon">👤</div>
-          <div>
-            <div class="ci-label">Founder</div>
-            <div class="ci-value">Gaucho Agregado</div>
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 rounded-xl bg-brand/10 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-brand-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div>
+              <div class="text-[11px] text-slate-500 uppercase tracking-wider font-semibold">Founder</div>
+              <div class="text-sm font-semibold">Gaucho Agregado</div>
+            </div>
           </div>
-        </div>
-        <div class="contact-item">
-          <div class="ci-icon">📧</div>
-          <div>
-            <div class="ci-label">Email</div>
-            <div class="ci-value">gauchoagregado21@gmail.com</div>
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 rounded-xl bg-brand/10 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-brand-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div>
+              <div class="text-[11px] text-slate-500 uppercase tracking-wider font-semibold">Email</div>
+              <div class="text-sm font-semibold">gauchoagregado21@gmail.com</div>
+            </div>
           </div>
-        </div>
-        <div class="contact-item">
-          <div class="ci-icon">📱</div>
-          <div>
-            <div class="ci-label">Phone / Viber</div>
-            <div class="ci-value">0956 037 0531</div>
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 rounded-xl bg-brand/10 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-brand-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+            <div>
+              <div class="text-[11px] text-slate-500 uppercase tracking-wider font-semibold">Phone / Viber</div>
+              <div class="text-sm font-semibold">0956 037 0531</div>
+            </div>
           </div>
-        </div>
-        <div class="contact-item">
-          <div class="ci-icon">📍</div>
-          <div>
-            <div class="ci-label">Location</div>
-            <div class="ci-value">Angeles City, Pampanga, Philippines</div>
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 rounded-xl bg-brand/10 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-brand-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <div class="text-[11px] text-slate-500 uppercase tracking-wider font-semibold">Location</div>
+              <div class="text-sm font-semibold">Angeles City, Pampanga, Philippines</div>
+            </div>
           </div>
         </div>
       </div>
 
-      <form class="contact-form" id="contactForm">
-        <h3>Send Us a Message</h3>
-        <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" name="name" placeholder="e.g. Maria Santos" required>
+      <!-- Form -->
+      <form id="contactForm" class="bg-slate-900 border border-slate-800 rounded-2xl p-8 animate-on-scroll">
+        <h3 class="text-lg font-bold mb-6">Send Us a Message</h3>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-1.5">Your Name</label>
+            <input type="text" name="name" placeholder="e.g. Maria Santos" required class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand transition-colors">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-1.5">Business Name</label>
+            <input type="text" name="business" placeholder="e.g. Serenity Spa" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand transition-colors">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-1.5">Email or Phone</label>
+            <input type="text" name="contact" placeholder="your@email.com or 09XX-XXX-XXXX" required class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand transition-colors">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-1.5">What are you interested in?</label>
+            <select name="interest" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg text-sm text-white focus:outline-none focus:border-brand transition-colors appearance-none cursor-pointer">
+              <option value="Free Demo">Free Demo</option>
+              <option value="Pricing Question">Pricing Question</option>
+              <option value="Custom Development">Custom Development</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-1.5">Message</label>
+            <textarea name="message" rows="4" placeholder="Tell us about your business and what you're looking for..." class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-lg text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand transition-colors resize-y"></textarea>
+          </div>
         </div>
-        <div class="form-group">
-          <label>Business Name</label>
-          <input type="text" name="business" placeholder="e.g. Serenity Spa">
-        </div>
-        <div class="form-group">
-          <label>Email or Phone</label>
-          <input type="text" name="contact" placeholder="your@email.com or 09XX-XXX-XXXX" required>
-        </div>
-        <div class="form-group">
-          <label>What are you interested in?</label>
-          <select name="interest">
-            <option value="Free Demo">Free Demo</option>
-            <option value="Pricing Question">Pricing Question</option>
-            <option value="Custom Development">Custom Development</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea name="message" placeholder="Tell us about your business and what you're looking for..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" id="cfBtn" style="width:100%;justify-content:center">Send Message →</button>
-        <div id="cfStatus" style="margin-top:12px;font-size:0.85rem;text-align:center;display:none"></div>
+        <button type="submit" id="cfBtn" class="w-full mt-6 py-3.5 bg-brand hover:bg-brand-dark text-white font-bold rounded-xl transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand/30 text-sm">
+          Send Message →
+        </button>
+        <div id="cfStatus" class="mt-3 text-sm text-center hidden"></div>
       </form>
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="nav-brand" style="margin-bottom:4px">
-          <div class="logo">L</div>
-          Lonetech
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer class="bg-slate-900 border-t border-slate-800 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+      <!-- Brand -->
+      <div class="col-span-2 md:col-span-1">
+        <a href="#" class="flex items-center gap-3 mb-4">
+          <div class="w-9 h-9 bg-brand rounded-lg flex items-center justify-center text-white font-black text-lg">L</div>
+          <span class="font-extrabold text-lg tracking-tight">Lonetech</span>
+        </a>
+        <p class="text-sm text-slate-400 leading-relaxed max-w-xs">Software &amp; Development Services — building practical technology solutions for Philippine businesses.</p>
+      </div>
+      <!-- Product -->
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">Product</h4>
+        <div class="flex flex-col gap-2.5">
+          <a href="#demo" class="text-sm text-slate-400 hover:text-white transition-colors">Modules</a>
+          <a href="#features" class="text-sm text-slate-400 hover:text-white transition-colors">Features</a>
+          <a href="#pricing" class="text-sm text-slate-400 hover:text-white transition-colors">Pricing</a>
+          <a href="#how" class="text-sm text-slate-400 hover:text-white transition-colors">How It Works</a>
         </div>
-        <p>Software &amp; Development Services — building practical technology solutions for Philippine businesses.</p>
       </div>
-      <div class="footer-col">
-        <h4>Product</h4>
-        <a href="#demo">Modules</a>
-        <a href="#product">Features</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#how">How It Works</a>
+      <!-- Company -->
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">Company</h4>
+        <div class="flex flex-col gap-2.5">
+          <a href="#about" class="text-sm text-slate-400 hover:text-white transition-colors">About Us</a>
+          <a href="#contact" class="text-sm text-slate-400 hover:text-white transition-colors">Contact</a>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="mailto:gauchoagregado21@gmail.com">Email Us</a>
-        <a href="tel:09560370531">Call / Viber</a>
+      <!-- Connect -->
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">Connect</h4>
+        <div class="flex flex-col gap-2.5">
+          <a href="mailto:gauchoagregado21@gmail.com" class="text-sm text-slate-400 hover:text-white transition-colors">Email Us</a>
+          <a href="tel:09560370531" class="text-sm text-slate-400 hover:text-white transition-colors">Call / Viber</a>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
+    <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
       <span>&copy; 2026 Lonetech Software &amp; Development Services. All rights reserved.</span>
       <span>Angeles City, Pampanga, Philippines</span>
     </div>
   </div>
 </footer>
 
+<!-- ═══════════════════════ SCRIPTS ═══════════════════════ -->
 <script>
-// Sticky nav background
+// ── Sticky nav ──
 window.addEventListener('scroll', () => {
-  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+  const nav = document.getElementById('nav');
+  if (window.scrollY > 40) {
+    nav.classList.add('bg-slate-950/90', 'nav-blur', 'border-b', 'border-slate-800');
+  } else {
+    nav.classList.remove('bg-slate-950/90', 'nav-blur', 'border-b', 'border-slate-800');
+  }
 });
 
-// ── Mobile Nav Toggle ──
-function toggleNav() {
-  const drawer = document.getElementById('navDrawer');
-  const backdrop = document.getElementById('drawerBackdrop');
-  const isOpen = drawer.classList.contains('open');
-  if (isOpen) {
-    drawer.classList.remove('open');
-    backdrop.classList.remove('open');
-    document.body.style.overflow = '';
-  } else {
-    drawer.classList.add('open');
-    backdrop.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-}
+// ── Scroll animations ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-// ── Auto Slideshow ──
-(function(){
-  const track = document.getElementById('slideTrack');
-  const dotsBox = document.getElementById('slideDots');
-  const bar = document.getElementById('slideProgress');
-  if(!track) return;
-  const slides = track.querySelectorAll('.slide');
-  const total = slides.length;
-  let cur = 0, timer, paused = false;
-  const INTERVAL = 6000;
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-  // build dots
-  for(let i=0;i<total;i++){
-    const d = document.createElement('button');
-    d.className = 'slide-dot' + (i===0?' active':'');
-    d.setAttribute('aria-label','Slide '+(i+1));
-    d.onclick = () => goTo(i);
-    dotsBox.appendChild(d);
-  }
-  const dots = dotsBox.querySelectorAll('.slide-dot');
-
-  function goTo(idx){
-    cur = ((idx % total) + total) % total;
-    track.style.transform = 'translateX(-' + (cur * 100) + '%)';
-    dots.forEach((d,i)=> d.classList.toggle('active', i===cur));
-    resetBar();
-  }
-
-  function resetBar(){
-    bar.style.transition = 'none';
-    bar.style.width = '0%';
-    void bar.offsetWidth;
-    bar.style.transition = 'width ' + INTERVAL + 'ms linear';
-    bar.style.width = '100%';
-  }
-
-  window.slideGo = function(dir){ goTo(cur + dir); startAuto(); };
-
-  function startAuto(){ clearInterval(timer); resetBar(); timer = setInterval(()=>{ if(!paused) goTo(cur+1); }, INTERVAL); }
-
-  const ss = document.getElementById('slideshow');
-  ss.addEventListener('mouseenter', ()=> paused=true);
-  ss.addEventListener('mouseleave', ()=>{ paused=false; startAuto(); });
-
-  // touch swipe
-  let tx=0;
-  ss.addEventListener('touchstart', e=>{ tx=e.touches[0].clientX; },{passive:true});
-  ss.addEventListener('touchend', e=>{ const dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>50){ goTo(cur+(dx<0?1:-1)); startAuto(); } },{passive:true});
-
-  startAuto();
-})();
-
-// Contact form → EmailJS
+// ── Contact form → EmailJS ──
 emailjs.init('x1Bpk2IIPXQ-NG0DB');
 
 document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -987,17 +858,17 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   const st = document.getElementById('cfStatus');
   btn.disabled = true;
   btn.textContent = 'Sending...';
-  st.style.display = 'none';
+  st.classList.add('hidden');
 
   emailjs.sendForm('service_6x5jwjb', 'template_mn655nm', form)
     .then(() => {
-      st.style.display = 'block';
+      st.classList.remove('hidden');
       st.style.color = '#10b981';
       st.textContent = '✓ Message sent! We\'ll get back to you within 24 hours.';
       form.reset();
     })
     .catch(() => {
-      st.style.display = 'block';
+      st.classList.remove('hidden');
       st.style.color = '#f87171';
       st.textContent = 'Something went wrong. Please email us directly at gauchoagregado21@gmail.com';
     })
@@ -1007,7 +878,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     });
 });
 
-// Smooth scroll for anchor links
+// ── Smooth scroll ──
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const id = a.getAttribute('href');
@@ -1016,6 +887,103 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 });
+
+// ── Starfield universe background ──
+(function() {
+  const canvas = document.getElementById('starfield');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h, stars = [], shootingStars = [];
+  const STAR_COUNT = 350;
+  const SHOOTING_INTERVAL = 3000;
+
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  // Create stars
+  for (let i = 0; i < STAR_COUNT; i++) {
+    stars.push({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      r: Math.random() * 2 + 0.2,
+      opacity: Math.random() * 0.9 + 0.1,
+      twinkleSpeed: Math.random() * 0.03 + 0.005,
+      twinkleOffset: Math.random() * Math.PI * 2,
+      color: ['#fff','#fff','#c7d2fe','#fde68a','#a7f3d0','#c4b5fd'][Math.floor(Math.random()*6)],
+      drift: (Math.random() - 0.5) * 0.15 // slow lateral drift
+    });
+  }
+
+  // Shooting star generator
+  function spawnShootingStar() {
+    shootingStars.push({
+      x: Math.random() * w * 0.7,
+      y: Math.random() * h * 0.4,
+      len: Math.random() * 80 + 40,
+      speed: Math.random() * 6 + 4,
+      opacity: 1,
+      angle: Math.PI / 4 + (Math.random() - 0.5) * 0.3
+    });
+  }
+  setInterval(spawnShootingStar, SHOOTING_INTERVAL);
+
+  let t = 0;
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    t += 0.016;
+
+    // Draw stars with twinkling + slow drift
+    stars.forEach(s => {
+      const flicker = Math.sin(t * s.twinkleSpeed * 60 + s.twinkleOffset) * 0.3 + 0.7;
+      s.x += s.drift;
+      if (s.x > w + 5) s.x = -5;
+      if (s.x < -5) s.x = w + 5;
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = s.color;
+      ctx.globalAlpha = s.opacity * flicker;
+      ctx.fill();
+      // Add glow to bigger stars
+      if (s.r > 1.2) {
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r * 3, 0, Math.PI * 2);
+        ctx.fillStyle = s.color;
+        ctx.globalAlpha = s.opacity * flicker * 0.08;
+        ctx.fill();
+      }
+    });
+    ctx.globalAlpha = 1;
+
+    // Draw shooting stars
+    for (let i = shootingStars.length - 1; i >= 0; i--) {
+      const ss = shootingStars[i];
+      const dx = Math.cos(ss.angle) * ss.len;
+      const dy = Math.sin(ss.angle) * ss.len;
+      const grad = ctx.createLinearGradient(ss.x, ss.y, ss.x - dx, ss.y - dy);
+      grad.addColorStop(0, `rgba(255,255,255,${ss.opacity})`);
+      grad.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.strokeStyle = grad;
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(ss.x, ss.y);
+      ctx.lineTo(ss.x - dx, ss.y - dy);
+      ctx.stroke();
+      ss.x += Math.cos(ss.angle) * ss.speed;
+      ss.y += Math.sin(ss.angle) * ss.speed;
+      ss.opacity -= 0.008;
+      if (ss.opacity <= 0 || ss.x > w + 100 || ss.y > h + 100) {
+        shootingStars.splice(i, 1);
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
 </script>
 </body>
 </html>
