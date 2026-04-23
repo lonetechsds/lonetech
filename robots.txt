@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lonetech.lonetechsds.workers.dev/sitemap.xml
